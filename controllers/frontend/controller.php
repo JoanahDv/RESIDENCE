@@ -34,13 +34,43 @@ function welcome()
 function app(){
     require('views/frontend/app.php');
 }
-function userSignUp(){
+function userSignUp($post_parameters){
+    if (!empty($post_parameters)) {   // if form is submitted
+        $LoginManager = new LoginManagerFrontend();
+
+        $username = $post_parameters['uname'];
+        $password = $post_parameters['psw'];
+
+        $user = $LoginManager->createUser($username, $password);
+        if ($user) {
+            header('Location:/index.php?action=userlogin'); // redirect to login
+            exit();
+        } else {
+            $message = "Unexpected problem occured";
+        }
+    }
     require('views/frontend/usersignup.php');
 }
-function userLogin(){
+
+function userLogin($post_parameters)
+{
+    if (!empty($post_parameters)) {   // if form is submitted
+        $LoginManager = new LoginManagerFrontend();
+
+        $username = $post_parameters['uname'];
+        $password = $post_parameters['psw'];
+
+        $user = $LoginManager->getUser($username, $password);
+        if ($user) {
+            session_start();
+            $_SESSION['loggedin'] = True;
+            header('Location:/index.php?action=dashboard'); // redirect backend
+            exit();
+        } else {
+            $message = "Username and Password is incorrect";
+        }
+    }
     require('views/frontend/userlogin.php');
 }
   
 
-
- 

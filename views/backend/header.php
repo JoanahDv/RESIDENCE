@@ -18,4 +18,4 @@
         <li><a class="nav-link" href="index.php?action=contact">Contact</a></li>
         <li><a class="nav-link" href="index.php?action=login">logout</a></li>
     </ul>
-</header>
+</header> 

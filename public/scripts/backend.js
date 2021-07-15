@@ -39,32 +39,7 @@ $(document).ready(function() {
         });
     });
     $(".dashboardHome a").click(function(event) {
-        $("#dashboardHome").show();
-        $("#chapterList").show();
-        $("#commentList").show();
-        $("#newChapter").show();
         $("#contactList").show();
         $(".newchapterForm").show();
     });
-
-
-    // $("#form-image-upload").on("submit", function(e) {
-    //     e.preventDefault();
-    //     var $form = $(this);
-    //     var form = new FormData($form[0]);
-    //     $.ajax({
-    //         url: $form.attr("action"),
-    //         method: $form.attr("method"),
-    //         data: form,
-    //         processData: false,
-    //         contentType: false,
-    //         success: function(data, status, xhr) {
-    //             $("#image").val(data); // set image name in form
-    //             $("#image-preview").attr("src", "/public/images/" + data);
-    //         },
-    //         error: function(error) {
-    //             alert(error.responseText);
-    //         }
-    //     });
-    // });
 });

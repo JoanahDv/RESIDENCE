@@ -29,7 +29,7 @@ class commentManagerFrontend
       global $db; // defined in models/connect.php
       $sql = $db->prepare('UPDATE comment SET flag = 1 WHERE id = ?');
       $affectedLines = $sql->execute(array($id));
-    }
+    }       
     public function getComments($pageNumber) {
         {
         $commentsPerPage = 6;
