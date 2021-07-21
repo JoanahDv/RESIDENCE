@@ -22,7 +22,7 @@
 -->
             <input class="submit" type="submit" />
 
-            <p class="logintexts" class="forgot"><a href="#">Forgot Password?</p>
+            <!-- <p class="logintexts" class="forgot"><a href="#">Forgot Password?</p> -->
             <p class="logintexts" class="tab active"><a href="index.php?action=userlogin">Login</a></p>
 
         </form>

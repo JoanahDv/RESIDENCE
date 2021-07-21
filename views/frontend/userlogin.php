@@ -28,7 +28,7 @@
             ?>
             <input class="submit" type="submit" />
             <p class="logintexts" class="forgot"><a href="#">Forgot Password?</p>
-            <p class="logintexts" class="tab active">Click here to <a href="index.php?action=usersignup">Sign Up    </a></p>
+            <p class="logintexts" class="tab active">Click here to <a href="index.php?action=usersignup">Sign Up </a></p>
         </form>
 
 
