@@ -4,7 +4,7 @@ $(document).ready(function() {
         console.log($("#burger_menu"));
     });
 
-    $("#contactForm").submit(function(event) {
+    $("#filters_form").submit(function(event) {
         event.preventDefault(); // prevent regular form submit
         // submit form using AJAX
         var form = $(this);
@@ -12,29 +12,22 @@ $(document).ready(function() {
             url: form.attr('action'),
             data: form.serialize(), // serializes the form's elements.
             success: function(data) {
-                $("#success").show();
-                $("#contactForm").hide();
+                // update map data points
             }
         });
     });
 
-    $(".flagform").submit(function(event) {
-        event.preventDefault(); // prevent regular form submit
-        // submit form using AJAX
-        var form = $(this);
-        $.post({
-            url: form.attr('action'),
-            data: form.serialize(), // serializes the form's elements.
-            success: function(data) {
-                form.prev().show(); // success message is the element right before the form 
-            }
+    //map
+    mapWrapper.map.on('load', function(event) {
+        $.get("/index.php?action=filter_stations", function(stations) { // 
+            mapWrapper.onload(stations);
         });
     });
-    var mapWrapper = new MapWrapper();
 
-    //MAP MARKER
-    mapWrapper.map.on('click', "locations", function(event) {
-        mapWrapper.onClick(event);
-    });
+});
+var mapWrapper = new MapWrapper();
 
+//MAP MARKER
+mapWrapper.map.on('click', "stations", function(event) {
+    mapWrapper.onClick(event);
 });

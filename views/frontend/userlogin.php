@@ -5,7 +5,7 @@
 
     <div class="main">
         <ul class="formHeader">
-            <li class="tab"><a href="index.php?action=userlogin">Log In</a></li>
+            <li class="tab"><a>Log In</a></li>
         </ul>
         <h3 class="logintexts">Welcome back! </h3>
 

@@ -1,9 +1,9 @@
 <?php
 
-require('models/frontend/postManager.php');
 require('models/frontend/LoginManager.php');
 require('models/frontend/contactManager.php');
 require('models/frontend/commentManager.php');
+require('models/frontend/stationManager.php');
  
 function contact($post_parameters)
     {
@@ -72,5 +72,17 @@ function userLogin($post_parameters)
     }
     require('views/frontend/userlogin.php');
 }
-  
+
+function stations($post_parameters)
+{
+    $stationManager = new StationManager();
+    $stations = $stationManager->getStations(
+        isset($post_parameters["minTravelTime"]) ? $post_parameters["minTravelTime"] : null,
+        isset($post_parameters["maxTravelTime"]) ? $post_parameters["maxTravelTime"] : null,
+    );
+    $json = json_encode($stations);
+    header('Content-Type: application/json');
+    echo $json;
+    exit();
+}
 

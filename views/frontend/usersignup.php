@@ -3,7 +3,7 @@
 <section id="signup">
     <div class="main">
         <ul class="formHeader">
-            <li class="tab"><a href="index.php?action=usersignup">Sign Up</a></li>
+            <li class="tab"><a>Sign Up</a></li>
         </ul>
         <h3 class="logintexts">Welcome</h3>
         <form class="form1" action="index.php?action=usersignup" method="POST">
@@ -21,9 +21,8 @@
             <i class="fas fa-lock"></i>
 -->
             <input class="submit" type="submit" />
-
-            <!-- <p class="logintexts" class="forgot"><a href="#">Forgot Password?</p> -->
-            <p class="logintexts" class="tab active"><a href="index.php?action=userlogin">Login</a></p>
+<br>
+             <p class="logintexts" class="tab active">Click here to <a href="index.php?action=userlogin">Login</a></p>
 
         </form>
     </div>

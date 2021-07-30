@@ -14,6 +14,8 @@ if ($_GET['action'] == 'contact') {
     contact($_POST);
 } elseif ($_GET['action'] == 'app') {
     app($_POST);
+} elseif ($_GET['action'] == 'filter_stations') {
+    stations($_POST);
 } elseif ($_GET['action'] == 'adminlogin') {
     adminlogin($_POST);
 } elseif ($_GET['action'] == 'userlogin') {

@@ -17,4 +17,44 @@ class MapWrapper {
             this.map.scrollZoom.disable();
         }
     }
+    onload(stations) {
+        // add filter data  to source
+        var featuresList = []; // empty array of features
+        // for each filter
+        stations.forEach(function(station) {
+            featuresList.push({
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [station.lng, station.lat]
+                },
+                "properties": {
+                    "stationName": station.stationName,
+                    "travelTime": String(station.travelTime),
+                    "cityName": station.cityName,
+                    "hasLake": String(station.hasLake),
+                    "hasFiber": String(station.hasFiber),
+                    "hasPark": String(station.hasPark),
+                    "hasCountryside": String(station.hasCountryside),
+                    "hasPark": String(station.hasPark)
+                }
+
+            });
+        });
+        var geojson = {
+            "type": "FeatureCollection",
+            "features": featuresList,
+        };
+        this.map.addSource("stations", {
+            "type": "geojson",
+            "data": geojson,
+        });
+
+        this.map.addLayer({
+            "id": "stations",
+            "type": "circle",
+            source: "stations"
+        });
+
+    }
 }
