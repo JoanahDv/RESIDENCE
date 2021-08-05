@@ -3,7 +3,7 @@
 
   class StationManager
   {
-      public function getStations($minTravelTime, $maxTravelTime)
+      public function getStations($minTravelTime, $maxTravelTime, $population, $mountain, $lake, $seaside, $park, $countryside, $fibre)
       {
           global $db;
           $query = 'SELECT * FROM station';
@@ -21,7 +21,34 @@
             $filters[] = "travelTime < ?";
             $filter_values[] = $maxTravelTime;
           }
-
+          if ($population){
+            $filters[] = "cityPopulation < ?";
+            $filter_values[] = $population;
+          }
+          if ($mountain){
+            $filters[] = "hasMountains < ?";
+            $filter_values[] =$mountain;
+          }
+          if ($lake){
+            $filters[] = "hasLake < ?";
+            $filter_values[] =$lake;
+          }
+          if ($seaside){
+            $filters[] = "hasCoastline < ?";
+            $filter_values[] =$seaside;
+          }
+          if ($park){
+            $filters[] = "hasPark < ?";
+            $filter_values[] =$park;
+          }
+          if ($countryside){
+            $filters[] = "hasCountryside < ?";
+            $filter_values[] =$countryside;
+          }
+          if ($fibre){
+            $filters[] = "hasFibre < ?";
+            $filter_values[] =$fibre;
+          }
 
           if ($filters) {
             $filters_string = implode(" AND ", $filters);

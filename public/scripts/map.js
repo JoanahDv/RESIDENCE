@@ -17,6 +17,13 @@ class MapWrapper {
             this.map.scrollZoom.disable();
         }
     }
+
+    // onClick(event) {
+    //     var features = this.map.queryRenderedFeatures(event.point); // find features at coordinates
+    //     var feature = features[0]; // select first feature
+    //     var hasPark = feature.properties.hasPark;
+    //     if (hasPark > 0) {};
+
     onload(stations) {
         // add filter data  to source
         var featuresList = []; // empty array of features
@@ -36,7 +43,10 @@ class MapWrapper {
                     "hasFiber": String(station.hasFiber),
                     "hasPark": String(station.hasPark),
                     "hasCountryside": String(station.hasCountryside),
-                    "hasPark": String(station.hasPark)
+                    "hasPark": String(station.hasPark),
+                    "hasCoastline": String(station.hasCoastline),
+                    "hasMountains": String(station.hasMountains)
+
                 }
 
             });

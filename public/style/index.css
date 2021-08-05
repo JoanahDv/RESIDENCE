@@ -566,9 +566,19 @@ tr.last_row {
     #homepage {
         display: block;
     }
-    /* APP PAGE  */
-    #app {
+    /* ---------------------------------------- */
+    /*  ==            APP PAGE                  */
+    /*---------------------------------------- */
+    #filters_form,
+    .models {
         display: flex;
+        padding: 30px;
+    }
+    .models {
+        padding: 50px;
+    }
+    .checkbox {
+        padding: 3px;
     }
     /* ---------------------------------------- */
     /*  ==            BECK END                  */
