@@ -10,7 +10,7 @@
         <h3 class="logintexts">Welcome back! </h3>
 
         <form class="form1" action="index.php?action=userlogin" method="POST">
-            <input class="un " type="text" placeholder="Username" name="uname">
+            <input class="un" type="text" placeholder="username" name="uname">
             <i class="fas fa-user"></i>
 
             <input class="pass" type="password" placeholder="Password" name="psw">

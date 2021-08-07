@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="JEAN FORTEROCHE">
-    <meta name="author" content="ME">
+    <meta name="description" content="RESIDENCE">
+    <meta name="author" content="Joanah">
     <title>RESIDENCE</title>
     <link rel="shortcut icon" type="image/jpg" href="/favicon.png"/>
 
@@ -37,5 +37,12 @@
             echo $content;
           ?>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+ 		<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+        <script src="public/scripts/configuration.js"></script>
+        <script src="public/scripts/map.js"></script>
+        <script src="public/scripts/index.js"></script>
 </body>
 </html>

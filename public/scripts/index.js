@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var mapWrapper = new MapWrapper();
+
     $("#burger_action").on("click", function() {
         $("#burger_menu").toggle();
         console.log($("#burger_menu"));
@@ -13,21 +15,20 @@ $(document).ready(function() {
             data: form.serialize(), // serializes the form's elements.
             success: function(data) {
                 // update map data points
+                mapWrapper.updateStations(data);
+
             }
         });
     });
 
-    //map
-    mapWrapper.map.on('load', function(event) {
+    mapWrapper.map.on('load', function(event) { // c'est dans la classe map.js
         $.get("/index.php?action=filter_stations", function(stations) { // 
             mapWrapper.onload(stations);
         });
     });
 
-});
-var mapWrapper = new MapWrapper();
-
-//MAP MARKER
-mapWrapper.map.on('click', "stations", function(event) {
-    mapWrapper.onClick(event);
+    //MAP MARKER
+    mapWrapper.map.on('click', "stations", function(event) {
+        mapWrapper.onClick(event);
+    });
 });

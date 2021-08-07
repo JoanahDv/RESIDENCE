@@ -571,7 +571,7 @@ tr.last_row {
     /*---------------------------------------- */
     #filters_form,
     .models {
-        display: flex;
+        /* display: flex; */
         padding: 30px;
     }
     .models {

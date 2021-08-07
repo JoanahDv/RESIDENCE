@@ -7,22 +7,18 @@
         </ul>
         <h3 class="logintexts">Welcome</h3>
         <form class="form1" action="index.php?action=usersignup" method="POST">
-            <input class="user " type="text" placeholder="Username" name="uname"/>
+            <input class="user " type="text" placeholder="Username" name="uname" />
             <i class="fas fa-user"></i>
 
+            <input class="user " type="text" placeholder="e-mail" name="email" />
+            <i class="fa fa-envelope"></i>
 
-            <input class="pass" type="password" placeholder="Password" name="psw"/>
+            <input class="pass" type="password" placeholder="Password" name="psw" />
             <i class="fas fa-lock"></i>
 
-
-
-            <!-- 
-            <input class="passVerif " type="text" placeholder="confirm password" name="psw_confirmation" />
-            <i class="fas fa-lock"></i>
--->
             <input class="submit" type="submit" />
-<br>
-             <p class="logintexts" class="tab active">Click here to <a href="index.php?action=userlogin">Login</a></p>
+            <br>
+            <p class="logintexts" class="tab active">Click here to <a href="index.php?action=userlogin">Login</a></p>
 
         </form>
     </div>

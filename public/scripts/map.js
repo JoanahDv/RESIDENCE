@@ -26,6 +26,27 @@ class MapWrapper {
 
     onload(stations) {
         // add filter data  to source
+        var geojson = this.stationsToGeoJson(stations);
+        this.map.addSource("stations", {
+            "type": "geojson",
+            "data": geojson,
+        });
+
+        this.map.addLayer({
+            "id": "stations",
+            "type": "circle",
+            source: "stations"
+        });
+
+    }
+
+    updateStations(stations) {
+        var geojson = this.stationsToGeoJson(stations);
+        this.map.getSource('stations').setData(geojson);
+    }
+
+    // convert station list from API to geojson
+    stationsToGeoJson(stations) {
         var featuresList = []; // empty array of features
         // for each filter
         stations.forEach(function(station) {
@@ -55,16 +76,6 @@ class MapWrapper {
             "type": "FeatureCollection",
             "features": featuresList,
         };
-        this.map.addSource("stations", {
-            "type": "geojson",
-            "data": geojson,
-        });
-
-        this.map.addLayer({
-            "id": "stations",
-            "type": "circle",
-            source: "stations"
-        });
-
+        return geojson;
     }
 }

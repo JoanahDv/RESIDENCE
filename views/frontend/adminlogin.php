@@ -10,10 +10,11 @@
       <label for="uname"><b>USERNAME</b></label><br>
       <input type="username" placeholder="Enter Username" name="uname" required>
       <br>
-      <label for="psw"><b>PASSWORD</b></label><br>
 
+      <label for="psw"><b>PASSWORD</b></label><br>
       <input type="password" placeholder="Enter Password" name="psw" required>
-      <br><br>
+      <br>
+      <br>
       <?php
       if (isset($message)) {
         echo $message;

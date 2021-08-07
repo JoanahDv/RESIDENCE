@@ -2,47 +2,34 @@
 
 // require('models/frontend/stationManager.php');
 
+function app(){
+    require('views/backend/app.php');
+}
+function userSignUp($post_parameters){
+    if (!empty($post_parameters)) {   // if form is submitted
+        $LoginManager = new LoginManagerFrontend();
+
+        $username = $post_parameters['uname'];
+        $email= $post_parameters['email'];
+        $password = $post_parameters['psw'];
 
 
-// function logout()
-// {
-//     redirectIfNotLoggedin();
-//     session_destroy();
-//     header('Location:/index.php?action=userlogin'); // redirect to frontend
-//     exit();
-// }
+        $user = $LoginManager->createUser($username, $password,$email);
+        if ($user) {
+            header('Location:/index.php?action=userlogin'); // redirect to login
+            exit();
+        } else {
+            $message = "Unexpected problem occured";
+        }
+    }
+    require('views/frontend/usersignup.php');
+}
 
-// function dashboard()
-// {
-//     redirectIfNotLoggedin();
-//     require('views/backend/dashboard.php');
-// }
-
-// require('models/backend/ChapterManager.php');
-// require('models/backend/commentManager.php');
-// require('models/backend/contactManager.php');
-
-
-// function userlogin($post_parameters)
-// {
-//     if (!empty($post_parameters)) {   // if form is submitted
-//         $LoginManager = new LoginManagerFrontend();
-
-//         $username = $post_parameters['uname'];
-//         $password = $post_parameters['psw'];
-
-//         $user = $LoginManager->getUser($username, $password, true);
-//         if ($user) {
-//             session_start();
-//             $_SESSION['loggedin'] = True;
-//             header('Location:/index.php?action=dashboard'); // redirect backend
-//             exit();
-//         } else {
-//             $message = "Username and Password is incorrect";
-//         }
-//     }
-//     require('views/frontend/userlogin.php');
-// }
-
-
+function logout()
+{
+    // redirectIfNotLoggedin();
+    session_destroy();
+    header('Location:/index.php?action=login'); // redirect to frontend
+    exit();
+}
  ?>

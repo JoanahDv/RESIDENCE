@@ -22,33 +22,13 @@ function contact($post_parameters)
         
     require('views/frontend/contact.php');
 }
-function app(){
-    require('views/frontend/app.php');
-}
-function userSignUp($post_parameters){
-    if (!empty($post_parameters)) {   // if form is submitted
-        $LoginManager = new LoginManagerFrontend();
 
-        $username = $post_parameters['uname'];
-        $password = $post_parameters['psw'];
-
-        $user = $LoginManager->createUser($username, $password);
-        if ($user) {
-            header('Location:/index.php?action=userlogin'); // redirect to login
-            exit();
-        } else {
-            $message = "Unexpected problem occured";
-        }
-    }
-    require('views/frontend/usersignup.php');
-}
 function welcome()
 {   
     // $chapterManager = new ChapterManagerFrontend();
      require('views/frontend/welcome.php');
    
 }
-
 
 
 function userLogin($post_parameters)
@@ -63,7 +43,7 @@ function userLogin($post_parameters)
         if ($user) {
             session_start();
             $_SESSION['loggedin'] = True;
-            header('Location:/index.php?action=dashboard'); // redirect backend
+            header('Location:/index.php?action=app'); // redirect the app
             exit();
         } else {
             $message = "Username and Password is incorrect";
@@ -99,8 +79,7 @@ function stations($post_parameters)
     $stations = $stationManager->getStations(
         isset($post_parameters["minTravelTime"]) ? $post_parameters["minTravelTime"] : null,
         isset($post_parameters["maxTravelTime"]) ? $post_parameters["maxTravelTime"] : null,
-        isset($post_parameters["population"]) ? $post_parameters["population"] : null,
-        isset($post_parameters["seaSide"]) ? $post_parameters["seaside"] : null,
+        isset($post_parameters["seaside"]) ? $post_parameters["seaside"] : null,
         isset($post_parameters["city"]) ? $post_parameters["city"] : null,
         isset($post_parameters["hasark"]) ? $post_parameters["park"] : null,
         isset($post_parameters["hasCountryside"]) ? $post_parameters["hasCountryside"] : null,
