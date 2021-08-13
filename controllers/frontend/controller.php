@@ -71,6 +71,25 @@ function adminlogin($post_parameters)
     }
     require('views/frontend/adminlogin.php');
 }
+function userSignUp($post_parameters){
+    if (!empty($post_parameters)) {   // if form is submitted
+        $LoginManager = new LoginManagerFrontend();
+
+        $username = $post_parameters['uname'];
+        $email= $post_parameters['email'];
+        $password = $post_parameters['psw'];
+
+
+        $user = $LoginManager->createUser($username, $password,$email);
+        if ($user) {
+            header('Location:/index.php?action=userlogin'); // redirect to login
+            exit();
+        } else {
+            $message = "Unexpected problem occured";
+        }
+    }
+    require('views/frontend/usersignup.php');
+}
 
 
 function stations($post_parameters)
@@ -79,12 +98,17 @@ function stations($post_parameters)
     $stations = $stationManager->getStations(
         isset($post_parameters["minTravelTime"]) ? $post_parameters["minTravelTime"] : null,
         isset($post_parameters["maxTravelTime"]) ? $post_parameters["maxTravelTime"] : null,
+        //isset($post_parameters["stationName"]) ? $post_parameters["name"] : null,
+        //isset($post_parameters["cityName"]) ? $post_parameters["name"] : null,
         isset($post_parameters["seaside"]) ? $post_parameters["seaside"] : null,
-        isset($post_parameters["city"]) ? $post_parameters["city"] : null,
-        isset($post_parameters["hasark"]) ? $post_parameters["park"] : null,
-        isset($post_parameters["hasCountryside"]) ? $post_parameters["hasCountryside"] : null,
+        isset($post_parameters["mountains"]) ? $post_parameters["mountains"] : null,
+        isset($post_parameters["countryside"]) ? $post_parameters["Countryside"] : null,
+        // isset($post_parameters["city"]) ? $post_parameters["city"] : null,
+        isset($post_parameters["park"]) ? $post_parameters["park"] : null,
         isset($post_parameters["lake"]) ? $post_parameters["lake"] : null,
         isset($post_parameters["fibre"]) ? $post_parameters["fibre"] : null
+
+
 
     );
     $json = json_encode($stations);

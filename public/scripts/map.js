@@ -34,9 +34,15 @@ class MapWrapper {
 
         this.map.addLayer({
             "id": "stations",
-            "type": "circle",
-            source: "stations"
+            "source": "stations",
+            "type": "symbol",
+            'layout': {
+                'icon-image': 'pin',
+                'icon-size': 0.5
+            },
+
         });
+
 
     }
 
@@ -77,5 +83,6 @@ class MapWrapper {
             "features": featuresList,
         };
         return geojson;
-    }
+    };
+
 }

@@ -3,14 +3,31 @@
 
   class StationManager
   {
-      public function getStations($minTravelTime, $maxTravelTime, $seaside, $mountain, $lake, $park, $countryside, $fibre)
-      {
+      public function getStations(
+        //$name,
+        //$city,
+        $minTravelTime, 
+        $maxTravelTime,
+        $seaside, 
+        $mountain, 
+        $countryside,
+        $park,
+        $lake, 
+        $fibre
+      ) {
           global $db;
           $query = 'SELECT * FROM station';
 
           // add filters
           $filters = array();
           $filter_values = array();
+          
+          //if ($name){
+            //$filters[]="stationName = true";
+          //}
+          //if ($city){
+            //$filters[]="cityName = true";
+          //}
 
           if ($minTravelTime) {
             $filters[] = "travelTime > ?";
@@ -23,7 +40,7 @@
           }
           
           if ($mountain){
-            $filters[] = "hasMountains = ?";
+            $filters[] = "hasMountains = true";
             $filter_values[] =$mountain;
           }
           if ($lake){
@@ -34,15 +51,15 @@
             $filters[] = "hasCoastline = true";
           }
           if ($park){
-            $filters[] = "hasPark < ?";
+            $filters[] = "hasPark = ?";
             $filter_values[] =$park;
           }
           if ($countryside){
-            $filters[] = "hasCountryside < ?";
+            $filters[] = "hasCountryside = ?";
             $filter_values[] =$countryside;
           }
           if ($fibre){
-            $filters[] = "hasFibre < ?";
+            $filters[] = "hasFibre = true";
             $filter_values[] =$fibre;
           }
 

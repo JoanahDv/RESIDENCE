@@ -37,7 +37,9 @@ h1,
 
 .content h1,
 h2 {
-    color: #191919;
+    color: #1b306b;
+    background-color: #80808054;
+    margin-top: 85px
 }
 
 .content h2 {
@@ -186,9 +188,10 @@ header ul {
 
 /*---------------------------------------- */
 
-#app {
+
+/* #app {
     padding-top: 8%;
-}
+} */
 
 #app form {
     /* width: 32%; */
@@ -569,16 +572,36 @@ tr.last_row {
     /* ---------------------------------------- */
     /*  ==            APP PAGE                  */
     /*---------------------------------------- */
-    #filters_form,
+    /* #filters_form,
     .models {
-        /* display: flex; */
+        display: flex;
         padding: 30px;
-    }
+    } */
     .models {
-        padding: 50px;
+        margin-top: 43px;
     }
     .checkbox {
         padding: 3px;
+    }
+    h1,
+    .content h1,
+    h2 {
+        margin-top: 99px;
+        color: #1b306b;
+        background-color: #80808054;
+        text-align: center;
+    }
+    #app form {
+        /* width: 32%; */
+        padding: 31px;
+        column-count: 2;
+        background-color: #1b306b36;
+    }
+    #appSearchPage h3 {
+        margin-top: 93px;
+        text-align: center;
+        background-color: #cfd4df;
+        padding: 18px;
     }
     /* ---------------------------------------- */
     /*  ==            BECK END                  */

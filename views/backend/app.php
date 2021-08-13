@@ -1,11 +1,11 @@
 <?php $title = "app"; ?>
 <?php ob_start(); ?>
 
-<section>
+<section id ="appSearchPage">
 
-    <H1>
-        WELCOME TO YOUR PAGE
-    </H1>
+    <h3>
+       <i> Find your destination below</i>
+</h3>
 
     <!-- <figure id="logohead"> <img src="public/images/logohouse.png" alt="Website Logo" />
 </figure> -->
@@ -29,35 +29,34 @@
                 <input type="text" name="minTravelTime" />
             </div>
             <br>
-            </br>
-            <div class="models">
-                <h3>Filters</h3>
-                <div class="checkbox">
-                    <label><input type="checkbox" rel="seaside" name="seaside" /> Seaside</label>
+                <div class="models">
+                    <div class="checkbox">
+                        <label><input type="checkbox" rel="seaside" name="seaside" /> Seaside</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" rel="mountain" name="mountain" /> Mountain</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" rel="countryside" name="countryside" /> Countryside</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" rel="city" name="city" /> City</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" rel="park" name="park" /> Park</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" rel="lake" name="lake" /> Lake</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" rel="fibre" name="fibre" /> Fibre</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" rel="no fibre" name="no fiber" /> Without fibre</label>
+                    </div>
+                    <br>
+                    <input type="submit" class="filter_button" value="Filter" />
                 </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" rel="mountain" /> Mountain</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" rel="countryside" /> Countryside</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" rel="city" /> City</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" rel="park" /> Park</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" rel="lake" /> Lake</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" rel="fibre" /> Fibre</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" rel="no fibre" /> Without fibre</label>
-                </div>
-                <br>
-                <input type="submit" class="filter_button" value="Filter" />
         </form>
 
     </div>
