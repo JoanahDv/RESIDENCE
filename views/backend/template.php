@@ -22,7 +22,6 @@
     
     <!-- MAIN STYLESHEET-->
     <link href="public/style/index.css" rel="stylesheet"/>
-    <script src="public/scripts/backend.js"></script>
   
 
 
@@ -40,9 +39,11 @@
 
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
  		<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
-		<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+        <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch.umd.js"></script>
         <script src="public/scripts/configuration.js"></script>
         <script src="public/scripts/map.js"></script>
         <script src="public/scripts/index.js"></script>
+        <script src="public/scripts/backend.js"></script>
 </body>
 </html>

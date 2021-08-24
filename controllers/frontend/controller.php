@@ -92,28 +92,23 @@ function userSignUp($post_parameters){
 }
 
 
-function stations($post_parameters)
-{
-    $stationManager = new StationManager();
-    $stations = $stationManager->getStations(
-        isset($post_parameters["minTravelTime"]) ? $post_parameters["minTravelTime"] : null,
-        isset($post_parameters["maxTravelTime"]) ? $post_parameters["maxTravelTime"] : null,
-        //isset($post_parameters["stationName"]) ? $post_parameters["name"] : null,
-        //isset($post_parameters["cityName"]) ? $post_parameters["name"] : null,
-        isset($post_parameters["seaside"]) ? $post_parameters["seaside"] : null,
-        isset($post_parameters["mountains"]) ? $post_parameters["mountains"] : null,
-        isset($post_parameters["countryside"]) ? $post_parameters["Countryside"] : null,
-        // isset($post_parameters["city"]) ? $post_parameters["city"] : null,
-        isset($post_parameters["park"]) ? $post_parameters["park"] : null,
-        isset($post_parameters["lake"]) ? $post_parameters["lake"] : null,
-        isset($post_parameters["fibre"]) ? $post_parameters["fibre"] : null
+// function stations($post_parameters)
+// {
+//     $stationManager = new StationManager();
+//     $stations = $stationManager->getStations(
+//         isset($post_parameters["minTravelTime"]) ? $post_parameters["minTravelTime"] : null,
+//         isset($post_parameters["maxTravelTime"]) ? $post_parameters["maxTravelTime"] : null,
+//           isset($post_parameters["seaside"]) ? $post_parameters["seaside"] : null,
+//         isset($post_parameters["mountains"]) ? $post_parameters["mountains"] : null,
+//         isset($post_parameters["countryside"]) ? $post_parameters["Countryside"] : null,
+//          isset($post_parameters["park"]) ? $post_parameters["park"] : null,
+//         isset($post_parameters["lake"]) ? $post_parameters["lake"] : null,
+//         isset($post_parameters["fibre"]) ? $post_parameters["fibre"] : null
 
-
-
-    );
-    $json = json_encode($stations);
-    header('Content-Type: application/json');
-    echo $json;
-    exit();
-}
+//     );
+//     $json = json_encode($stations);
+//     header('Content-Type: application/json');
+//     echo $json;
+//     exit();
+// }
 

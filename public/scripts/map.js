@@ -1,4 +1,5 @@
 class MapWrapper {
+    station_layer_id = 'stations';
     constructor() {
         mapboxgl.accessToken = mapAccessToken
         this.map = new mapboxgl.Map({
@@ -10,19 +11,11 @@ class MapWrapper {
         // Add zoom and rotation controls to the map.
         this.map.addControl(new mapboxgl.NavigationControl());
 
-        // map not to zoom while scrolling
-
         var maxMobileWidth = 768;
         if (window.innerWidth >= maxMobileWidth) { // if width is lower or equal to number, disable zoom if mobile.do
             this.map.scrollZoom.disable();
         }
     }
-
-    // onClick(event) {
-    //     var features = this.map.queryRenderedFeatures(event.point); // find features at coordinates
-    //     var feature = features[0]; // select first feature
-    //     var hasPark = feature.properties.hasPark;
-    //     if (hasPark > 0) {};
 
     onload(stations) {
         // add filter data  to source
@@ -33,7 +26,7 @@ class MapWrapper {
         });
 
         this.map.addLayer({
-            "id": "stations",
+            "id": this.station_layer_id,
             "source": "stations",
             "type": "symbol",
             'layout': {
@@ -43,7 +36,33 @@ class MapWrapper {
 
         });
 
+        var thismap = this.map; // lose reference to "this" in callback functions
 
+        this.map.on('click', this.station_layer_id, function(e) {
+            // from https://docs.mapbox.com/mapbox-gl-js/example/popup-on-click/
+            // Copy coordinates array.
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = e.features[0].properties.cityName,
+            ;
+
+
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(thismap);
+        });
+
+        //CURSOR FOR MOUSE
+        this.map.on('mousemove', this.station_layer_id, function(e) {
+            thismap.getCanvas().style.cursor = 'pointer';
+        });
     }
 
     updateStations(stations) {
@@ -65,14 +84,16 @@ class MapWrapper {
                 "properties": {
                     "stationName": station.stationName,
                     "travelTime": String(station.travelTime),
-                    "cityName": station.cityName,
-                    "hasLake": String(station.hasLake),
-                    "hasFiber": String(station.hasFiber),
-                    "hasPark": String(station.hasPark),
-                    "hasCountryside": String(station.hasCountryside),
-                    "hasPark": String(station.hasPark),
                     "hasCoastline": String(station.hasCoastline),
-                    "hasMountains": String(station.hasMountains)
+                    "Mountains": String(station.hasMountains),
+                    "hasCountryside": String(station.hasCountryside),
+                    "cityName": station.cityName,
+                    "hasPark": String(station.hasPark),
+                    "hasLake": String(station.hasLake),
+                    "hasFiber": String(station.hasFiber)
+
+
+
 
                 }
 
@@ -84,5 +105,14 @@ class MapWrapper {
         };
         return geojson;
     };
-
+    // this.map.addLayer({
+    //     "id": "locations",
+    //     "type": "symbol",
+    //     source: "stations",
+    //     filter: ['!', ['has', 'point_count']],
+    //     "layout": {
+    //         'icon-image': ['match', ['get', 'haspark', 'hascoastline', 'Mountains', 'hasCountryside'], 'mappin'],
+    //         "icon-allow-overlap": true,
+    //     }
+    // });
 }

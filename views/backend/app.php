@@ -22,11 +22,11 @@
             <div>
                 <p><i class="far fa-clock"></i> Travelling time</p>
 
-                <label for="maxTravelTime"> maximum</label>
-                <input type="text" name="maxTravelTime" />
-
                 <label for="minTravelTime">minimum</label>
                 <input type="text" name="minTravelTime" />
+                
+                <label for="maxTravelTime"> maximum</label>
+                <input type="text" name="maxTravelTime" />
             </div>
             <br>
                 <div class="models">
@@ -40,9 +40,6 @@
                         <label><input type="checkbox" rel="countryside" name="countryside" /> Countryside</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" rel="city" name="city" /> City</label>
-                    </div>
-                    <div class="checkbox">
                         <label><input type="checkbox" rel="park" name="park" /> Park</label>
                     </div>
                     <div class="checkbox">
@@ -50,9 +47,6 @@
                     </div>
                     <div class="checkbox">
                         <label><input type="checkbox" rel="fibre" name="fibre" /> Fibre</label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" rel="no fibre" name="no fiber" /> Without fibre</label>
                     </div>
                     <br>
                     <input type="submit" class="filter_button" value="Filter" />

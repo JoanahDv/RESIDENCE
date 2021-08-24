@@ -17,14 +17,14 @@ if (isset($_GET['action'])) {
         contact($_POST);
     } elseif ($_GET['action'] == 'app') {
         app($_POST);
-    } elseif ($_GET['action'] == 'filter_stations') {
-        stations($_POST);
     } elseif ($_GET['action'] == 'adminlogin') {
         adminlogin($_POST);
     } elseif ($_GET['action'] == 'userlogin') {
         userlogin($_POST);
     } elseif ($_GET['action'] == 'usersignup') {
         usersignup($_POST);
+    } elseif ($_GET['action'] == 'profile') {
+        profile($_POST); 
     } elseif ($_GET['action'] == 'logout') {
         logout();
     }

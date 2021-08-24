@@ -9,14 +9,21 @@ function redirectIfNotLoggedin()
         exit();
     }
 }
-function app(){
-      redirectIfNotLoggedin();
+function app()
+{
+    redirectIfNotLoggedin();
     require('views/backend/app.php');
 }
 function logout()
 {
     // redirectIfNotLoggedin();
     session_destroy();
-    header('Location:/index.php?action=login'); // redirect to frontend
+    header('views/frontend/login.php'); // redirect to frontend
     exit();
+}
+
+function profile()
+{
+    redirectIfNotLoggedin();
+    require('views/backend/profile.php');
 }
