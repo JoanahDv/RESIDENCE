@@ -1,11 +1,11 @@
 <?php $title = "app"; ?>
 <?php ob_start(); ?>
 
-<section id ="appSearchPage">
+<section id="appSearchPage">
 
     <h3>
-       <i> Find your destination below</i>
-</h3>
+        <i> Find your destination below</i>
+    </h3>
 
     <!-- <figure id="logohead"> <img src="public/images/logohouse.png" alt="Website Logo" />
 </figure> -->
@@ -24,33 +24,33 @@
 
                 <label for="minTravelTime">minimum</label>
                 <input type="text" name="minTravelTime" />
-                
+
                 <label for="maxTravelTime"> maximum</label>
                 <input type="text" name="maxTravelTime" />
             </div>
             <br>
-                <div class="models">
-                    <div class="checkbox">
-                        <label><input type="checkbox" rel="seaside" name="seaside" /> Seaside</label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" rel="mountain" name="mountain" /> Mountain</label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" rel="countryside" name="countryside" /> Countryside</label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" rel="park" name="park" /> Park</label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" rel="lake" name="lake" /> Lake</label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" rel="fibre" name="fibre" /> Fibre</label>
-                    </div>
-                    <br>
-                    <input type="submit" class="filter_button" value="Filter" />
+            <div class="models">
+                <div class="checkbox">
+                    <label><input type="checkbox" rel="seaside" name="seaside" /> Seaside</label>
                 </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" rel="mountain" name="mountain" /> Mountain</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" rel="countryside" name="countryside" /> Countryside</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" rel="park" name="park" /> Park</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" rel="lake" name="lake" /> Lake</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" rel="fibre" name="fibre" /> Fibre</label>
+                </div>
+                <br>
+                <input type="submit" class="filter_button" value="Filter" />
+            </div>
         </form>
 
     </div>

@@ -603,12 +603,14 @@ tr.last_row {
         background-color: #cfd4df;
         padding: 18px;
     }
-    #profileHome h1 {
-        margin-top: 77px;
-        /* color: #1b306b; */
-        background-color: #80808054;
-        text-align: center;
-        padding: 50px;
+    .profile_menu {
+        display: flex;
+        justify-content: space-around;
+        background-color: #1b306b2b;
+        list-style-type: none;
+        padding: 30px;
+        margin-top: 79px;
+        border-radius: 3px;
     }
     /* ---------------------------------------- */
     /*  ==            BECK END                  */

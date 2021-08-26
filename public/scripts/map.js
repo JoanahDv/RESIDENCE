@@ -42,7 +42,9 @@ class MapWrapper {
             // from https://docs.mapbox.com/mapbox-gl-js/example/popup-on-click/
             // Copy coordinates array.
             const coordinates = e.features[0].geometry.coordinates.slice();
-            const description = e.features[0].properties.cityName;
+            const description = e.features[0].properties.cityName +
+                "<br>" +
+                time_convert(e.features[0].properties.travelTime);
 
 
             // Ensure that if the map is zoomed out such that multiple
@@ -103,15 +105,11 @@ class MapWrapper {
             "features": featuresList,
         };
         return geojson;
-    };
-    // this.map.addLayer({
-    //     "id": "locations",
-    //     "type": "symbol",
-    //     source: "stations",
-    //     filter: ['!', ['has', 'point_count']],
-    //     "layout": {
-    //         'icon-image': ['match', ['get', 'haspark', 'hascoastline', 'Mountains', 'hasCountryside'], 'mappin'],
-    //         "icon-allow-overlap": true,
-    //     }
-    // });
+    }
+}
+
+
+function time_convert(num) {
+    var hours = parseInt(num);
+    return hours + "h de Paris";
 }
