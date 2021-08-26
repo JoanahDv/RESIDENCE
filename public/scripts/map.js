@@ -42,8 +42,7 @@ class MapWrapper {
             // from https://docs.mapbox.com/mapbox-gl-js/example/popup-on-click/
             // Copy coordinates array.
             const coordinates = e.features[0].geometry.coordinates.slice();
-            const description = e.features[0].properties.cityName,
-            ;
+            const description = e.features[0].properties.cityName;
 
 
             // Ensure that if the map is zoomed out such that multiple
