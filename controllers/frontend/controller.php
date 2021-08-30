@@ -51,6 +51,9 @@ function userLogin($post_parameters)
     }
     require('views/frontend/userlogin.php');
 }
+
+
+
 function adminlogin($post_parameters)
 {
     if (!empty($post_parameters)) {   // if form is submitted
@@ -91,24 +94,4 @@ function userSignUp($post_parameters){
     require('views/frontend/usersignup.php');
 }
 
-
-// function stations($post_parameters)
-// {
-//     $stationManager = new StationManager();
-//     $stations = $stationManager->getStations(
-//         isset($post_parameters["minTravelTime"]) ? $post_parameters["minTravelTime"] : null,
-//         isset($post_parameters["maxTravelTime"]) ? $post_parameters["maxTravelTime"] : null,
-//           isset($post_parameters["seaside"]) ? $post_parameters["seaside"] : null,
-//         isset($post_parameters["mountains"]) ? $post_parameters["mountains"] : null,
-//         isset($post_parameters["countryside"]) ? $post_parameters["Countryside"] : null,
-//          isset($post_parameters["park"]) ? $post_parameters["park"] : null,
-//         isset($post_parameters["lake"]) ? $post_parameters["lake"] : null,
-//         isset($post_parameters["fibre"]) ? $post_parameters["fibre"] : null
-
-//     );
-//     $json = json_encode($stations);
-//     header('Content-Type: application/json');
-//     echo $json;
-//     exit();
-// }
 

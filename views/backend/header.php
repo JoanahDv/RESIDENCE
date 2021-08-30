@@ -6,15 +6,15 @@
     <div id="burger_action">MENU</div>
     <div id="burger_menu">
         <ul>
-         <li><a class="nav-link" href="index.php?action=app">APP</a></li>
-        <li><a class="nav-link" href="index.php?action=profile">Profile</a></li>
-            <li><a class="nav-link" href="index.php?action=login">logout</a></li>
+        <li><a class="nav-link" href="index.php?action=favorites">Favorites</a></li>
+        <li><a href="#editProfile">Settings</a></li>
+        <li><a class="nav-link" href="index.php?action=login">logout</a></li>
         </ul>
     </div>
 
     <ul class="nav_menu">
-    <li><a class="nav-link" href="index.php?action=app">APP</a></li>
-         <li><a class="nav-link" href="index.php?action=profile">Profile</a></li>
-        <li><a class="nav-link" href="index.php?action=login">logout</a></li>
+          <li><a class="nav-link" href="index.php?action=favorites">Favorites</a></li>
+          <li><a href="#editProfile">Settings</a></li>
+        <li><a class="nav-link" href="index.php">logout</a></li>
     </ul>
 </header> 

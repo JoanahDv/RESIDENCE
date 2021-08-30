@@ -2,10 +2,15 @@
 <?php ob_start(); ?>
 
 <section id="appSearchPage">
-
     <h3>
-        <i> Find your destination below</i>
+        Welcome
     </h3>
+
+    <h4>
+        <i> Find your destination below</i>
+    </h4>
+
+
 
     <!-- <figure id="logohead"> <img src="public/images/logohouse.png" alt="Website Logo" />
 </figure> -->

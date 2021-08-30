@@ -1,35 +1,14 @@
-<?php $title = "Profile"; ?>
+<?php $title = "favorite"; ?>
 <?php ob_start(); ?>
 
-<section id="ProfileHome">
+<section id="ProfileHome" action="index.php?action=favorites" method="POST">>
     <!-- <H1>
-        WELCOME TO YOUR PROFILE
+        WELCOME =name
     </H1> -->
-
-
-    <!-- Navbar top-->
-    <!-- <div>
-        <ul>
-            <li>
-                <a href="#"> Settings </a>
-            </li>
-            <li>
-                <a href="#"> Inbox </a>
-            </li>
-            <li>
-                <a href="#"> Favourites </a>
-            </li>
-        </ul>
-    </div> -->
-
     <ul class ="profile_menu">
     <li><a href="#editProfile">Settings</a></li>
-    <li><a href="#favorites">Favourites</a></li>
     </ul>
-
-    <div action="index.php?action=profile" method="POST">
-        <h3 class="firtN"> Firt Name</h3>
-        <h3 class="lastN"> Last Name</h3>
+        
 </section>
 
 <!-- SETTINGS EDITINGS   -->
@@ -51,8 +30,7 @@
 
             <button type="submit" name="setting_submit">Save</button>
         </form>
-    </div>
-     
+      
 </section>
 <?php $content = ob_get_clean(); ?>
  <?php require 'views/backend/template.php'; ?>
