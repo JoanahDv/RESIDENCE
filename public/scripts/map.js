@@ -44,7 +44,8 @@ class MapWrapper {
             const coordinates = e.features[0].geometry.coordinates.slice();
             const description = e.features[0].properties.cityName +
                 "<br>" +
-                time_convert(e.features[0].properties.travelTime);
+                time_convert(e.features[0].properties.travelTime) +
+                "<br><button>Favourite</button>";
 
 
             // Ensure that if the map is zoomed out such that multiple
@@ -92,10 +93,6 @@ class MapWrapper {
                     "hasPark": String(station.hasPark),
                     "hasLake": String(station.hasLake),
                     "hasFiber": String(station.hasFiber)
-
-
-
-
                 }
 
             });
@@ -107,7 +104,6 @@ class MapWrapper {
         return geojson;
     }
 }
-
 
 function time_convert(num) {
     var hours = parseInt(num);

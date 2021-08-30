@@ -598,10 +598,14 @@ tr.last_row {
         background-color: #1b306b36;
     }
     #appSearchPage h3 {
+        font-size: 36px;
         margin-top: 78px;
         text-align: center;
         background-color: #cfd4df;
-        padding: 18px;
+        padding: 34px;
+    }
+    h4 {
+        text-align: center;
     }
     .profile_menu {
         display: flex;

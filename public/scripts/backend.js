@@ -16,8 +16,7 @@ $(document).ready(function() {
             }
         });
     });
-    $(".dashboardHome a").click(function(event) {
-        $("#contactList").show();
-        $(".newchapterForm").show();
-    });
+
+
+
 });
