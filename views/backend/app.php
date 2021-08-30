@@ -4,6 +4,8 @@
 <section id="appSearchPage">
     <h3>
         Welcome
+        <?php echo $user['username']; ?>
+
     </h3>
 
     <h4>

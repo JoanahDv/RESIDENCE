@@ -16,23 +16,32 @@
             <input class="pass" type="password" placeholder="Password" name="psw">
             <i class="fas fa-lock"></i>
             <?php
-                if (isset($message)) {
+            if (isset($message)) {
             ?>
-                    <br>
-                    <?php
-                        echo $message;
-                    ?>
-                    <br><br>
+                <br>
+                <?php
+                echo $message;
+                ?>
+                <br><br>
             <?php
-                }
+            }
             ?>
             <input class="submit" type="submit" />
             <p class="logintexts" class="forgot"><a href="#">Forgot Password?</p>
             <p class="logintexts" class="tab active">Click here to <a href="index.php?action=usersignup">Sign Up </a></p>
         </form>
 
-
     </div>
+    </div>
+    <hr>
+    <div class="result">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td></td>
+            </tr>
+        </table>
+
     </div>
 
 </section>

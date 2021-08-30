@@ -1,5 +1,6 @@
 <?php
 
+require('models/backend/userManager.php');
 // require('models/frontend/stationManager.php');
 function redirectIfNotLoggedin()
 {
@@ -12,7 +13,11 @@ function redirectIfNotLoggedin()
 function app()
 {
     redirectIfNotLoggedin();
+    $userManagerBackend =  new UserManagerBackend();
+    $userid = $_SESSION['id'];
+    $user = $userManagerBackend->getUser($userid);
     require('views/backend/app.php');
+
 }
 function logout()
 {

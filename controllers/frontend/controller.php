@@ -43,6 +43,7 @@ function userLogin($post_parameters)
         if ($user) {
             session_start();
             $_SESSION['loggedin'] = True;
+            $_SESSION['id'] = $user['id']; // id in the session
             header('Location:/index.php?action=app'); // redirect the app
             exit();
         } else {
