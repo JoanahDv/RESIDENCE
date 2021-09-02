@@ -23,10 +23,13 @@ if (isset($_GET['action'])) {
         userlogin($_POST);
     } elseif ($_GET['action'] == 'usersignup') {
         usersignup($_POST);
-    } elseif ($_GET['action'] == 'profile') {
-        profile($_POST); 
+    }elseif ($_GET['action'] == 'settings') {
+        settings($_POST);
+    }elseif ($_GET['action'] == 'favorites') {
+        favorites($_POST);
     } elseif ($_GET['action'] == 'logout') {
         logout();
+    
     }
 } else { // no action is set
     welcome(); // default to welcome page

@@ -218,7 +218,7 @@ header ul {
 /*---------------------------------------- */
 
 #contact_us {
-    background-image: url("/public/images/normandy.jpeg");
+    background-image: url("/public/images/contct.jpeg");
 }
 
 #contact_us input[type=text],
@@ -237,6 +237,21 @@ textarea {
     color: black;
 }
 
+#editForm input[type=text],
+select,
+textarea,
+input [type=text],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
 #contact_us input [type=submit] {
     /* background-color: #294040; */
     padding: 12px 20px;
@@ -252,6 +267,20 @@ textarea {
 .container {
     border-radius: 5px;
     padding: 20px;
+}
+
+#settingsPage {
+    margin: 35px;
+}
+
+#settingsPage h4 {
+    padding-top: 80px;
+}
+
+.container_edit {
+    padding: 30px;
+    text-align: center;
+    background-color: #1b306b47;
 }
 
 .container_contact {
@@ -542,7 +571,7 @@ tr.last_row {
         color: white;
     }
     .nav_menu li a:hover {
-        color: teal;
+        color: grey;
     }
     #burger_action {
         display: none;

@@ -1,19 +1,21 @@
 <?php $title = "favorite"; ?>
 <?php ob_start(); ?>
 
-<section id="ProfileHome" action="index.php?action=favorites" method="POST">>
-    <!-- <H1>
+    <section id="ProfileHome" action="index.php?action=favorites" method="POST">
+
+<!-- 
+    <H1>
         WELCOME =name
-    </H1> -->
+    </H1>
     <ul class ="profile_menu">
     <li><a href="#editProfile">Settings</a></li>
     </ul>
         
-</section>
+</section> -->
 
 <!-- SETTINGS EDITINGS   -->
 
-<section id="editProfile">
+<!-- <section id="editProfile">
     <div class="container_settings">
         <h3>Edit your profile here</h3>
         <p id="success">Thank you! <br>Your settings have been saved.</p>
@@ -30,6 +32,7 @@
 
             <button type="submit" name="setting_submit">Save</button>
         </form>
+         -->
       
 </section>
 <?php $content = ob_get_clean(); ?>

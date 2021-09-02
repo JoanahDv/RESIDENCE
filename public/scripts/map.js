@@ -43,6 +43,7 @@ class MapWrapper {
             // Copy coordinates array.
             const coordinates = e.features[0].geometry.coordinates.slice();
             const description = e.features[0].properties.cityName +
+
                 "<br>" +
                 time_convert(e.features[0].properties.travelTime) +
                 "<br><button>Favourite</button>";
@@ -104,6 +105,8 @@ class MapWrapper {
         return geojson;
     }
 }
+
+
 
 function time_convert(num) {
     var hours = parseInt(num);
