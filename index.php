@@ -25,8 +25,12 @@ if (isset($_GET['action'])) {
         usersignup($_POST);
     }elseif ($_GET['action'] == 'settings') {
         settings($_POST);
+    }elseif ($_GET['action'] == 'dashboard') {
+        dashboard($_POST);
     }elseif ($_GET['action'] == 'favorites') {
         favorites($_POST);
+    } elseif ($_GET['action'] == 'contactList') {
+        contactList();
     } elseif ($_GET['action'] == 'logout') {
         logout();
     

@@ -1,9 +1,7 @@
 <?php
 
 require('models/frontend/LoginManager.php');
-require('models/frontend/contactManager.php');
-require('models/frontend/stationManager.php');
- 
+require('models/frontend/contactManager.php'); 
 function contact($post_parameters)
     {
         if (!empty($post_parameters)) {  // if form is submitted
@@ -83,8 +81,7 @@ function userSignUp($post_parameters){
         $email= $post_parameters['email'];
         $password = $post_parameters['psw'];
 
-
-        $user = $LoginManager->createUser($username, $password,$email);
+        $user = $LoginManager->createUser($username, $email,$password);
         if ($user) {
             header('Location:/index.php?action=userlogin'); // redirect to login
             exit();

@@ -17,16 +17,16 @@
             return $contact;
         }
 
-        // public function getContacts(){
-        //     global $db;
-        //     $req = $db->prepare('
-        //   SELECT *
-        //   FROM contact');
-        //     $req->execute();
-        //     $contacts = $req->fetchAll();
-        //     $req->closeCursor();
-        //     return $contacts;
+        public function getContacts()
+        {
+            global $db;
+            $req = $db->prepare('
+          SELECT *
+          FROM contact');
+            $req->execute();
+            $contacts = $req->fetchAll();
+            $req->closeCursor();
+            return $contacts;
     
-        //  }
+         }
     }
-    ?>

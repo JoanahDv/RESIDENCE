@@ -50,6 +50,11 @@ $(document).ready(function() {
             mapWrapper.onload(stations);
         });
     });
+    //BACK END USER SETTINGS
+    // $(".#settings").click(function(event) {
+    //     $("#settingsPassword").hide();
+    //     $("#chapterList").hide();
+    // });
 
 
     function formDataToObject(formData) {
