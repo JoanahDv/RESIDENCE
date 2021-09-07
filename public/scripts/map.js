@@ -41,12 +41,21 @@ class MapWrapper {
         this.map.on('click', this.station_layer_id, function(e) {
             // from https://docs.mapbox.com/mapbox-gl-js/example/popup-on-click/
             // Copy coordinates array.
+            const stationId = e.features[0].properties.stationId;
+            const stationName = e.features[0].properties.stationName;
+            const stationName = e.features[0].properties.travelTime;
             const coordinates = e.features[0].geometry.coordinates.slice();
             const description = e.features[0].properties.cityName +
-
                 "<br>" +
                 time_convert(e.features[0].properties.travelTime) +
-                "<br><button>Favourite</button>";
+                //creat a form  for buttons add javascript to call action when submitted
+                "<br><form class='favourite_form' method='POST' action='index.php?action=add_favorite'>" +
+                "<input type='hidden' name='stationId' value=" + stationId + " />" +
+                "<input type='hidden' name='stationName' value=" + stationName + " />" +
+                "<input type='hidden' name='travelTime' value=" + travelTime + " />" +
+                "<input type='hidden' name='travelTime' value=" + cityName + " />" +
+                "<input type='submit' value='Favourite' />" +
+                "</form>";
 
 
             // Ensure that if the map is zoomed out such that multiple
@@ -60,6 +69,18 @@ class MapWrapper {
                 .setLngLat(coordinates)
                 .setHTML(description)
                 .addTo(thismap);
+
+            $(".favourite_form").submit(function(event) {
+                event.preventDefault(); // prevent regular form submit
+                var form = $(this);
+                $.post(
+                    form.attr("action"), //attr helps to acces to the form's action
+                    form.serialize(), // pass data to controller
+                    function(data) {
+                        alert("has been added");
+                    }
+                );
+            });
         });
 
         //CURSOR FOR MOUSE
@@ -85,6 +106,7 @@ class MapWrapper {
                     "coordinates": [station.lng, station.lat]
                 },
                 "properties": {
+                    "stationId": station.stationId,
                     "stationName": station.stationName,
                     "travelTime": String(station.travelTime),
                     "hasCoastline": String(station.hasCoastline),
