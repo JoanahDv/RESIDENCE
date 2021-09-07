@@ -5,12 +5,11 @@
 <section id="settingsNav">
     <nav>
         <ul class="nav_menu2">
-            <li><a class="nav-link" href="#settingsPassword">Edit your password</a></li>
-            <li><a class="nav-link" href="#settingsPage">Edit your Profile</a></li>
+            <li class ="passwordE"><a class="nav-link" href="#settingsPassword">Edit your password</a></li>
+            <li class ="profileE"><a class="nav-link" href="#settingsPage">Edit your Profile</a></li>
         </ul>
     </nav>
 </section>
-
 <section id="settingsPage">
     <h4>Edit Your Profile Form</h4>
     <div class="container_edit">
@@ -26,8 +25,8 @@
         </form>
     </div>
 </section>
-<section id="settingsPassword">
 
+<section id="settingsPassword">
     <div class="container_edit">
         <p id="success">Thank you! <br>Your password has been changed.</p>
         <h4>Edit Your Passoword</h4>

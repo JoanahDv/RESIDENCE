@@ -28,4 +28,5 @@ class UserManagerBackend
         $result = $query->execute($username, $email, $password, $id);
         return $result;
     }
+    
 }

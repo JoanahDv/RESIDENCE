@@ -9,9 +9,7 @@ $(document).ready(function() {
 
     $("#filters_form").submit(function(event) {
         event.preventDefault(); // prevent regular form submit
-        // submit form using AJAX
         var form = $(this);
-
 
         var search = formDataToObject(form.serializeArray());
         var filtered_stations = [];
@@ -50,12 +48,6 @@ $(document).ready(function() {
             mapWrapper.onload(stations);
         });
     });
-    //BACK END USER SETTINGS
-    // $(".#settings").click(function(event) {
-    //     $("#settingsPassword").hide();
-    //     $("#chapterList").hide();
-    // });
-
 
     function formDataToObject(formData) {
         var result = {};

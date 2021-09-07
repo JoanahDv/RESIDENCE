@@ -243,6 +243,11 @@
         margin: 35px;
     }
     
+    #settingsPassword,
+    #settingsPage {
+        display: none;
+    }
+    
     #settingsPage h4 {
         padding-top: 80px;
     }

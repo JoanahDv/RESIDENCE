@@ -2,6 +2,7 @@
 
 require('models/backend/userManager.php');
 require('models/backend/contactManager.php');
+require('models/backend/favoriteManager.php');
 
 function redirectIfNotLoggedin()
 {
@@ -11,6 +12,7 @@ function redirectIfNotLoggedin()
         exit();
     }
 }
+
 function app()
 {
     redirectIfNotLoggedin();
@@ -27,10 +29,24 @@ function logout()
     exit();
 }
 
+function addFavorite($post_parameters)
+{
+    redirectIfNotLoggedin();
+    if (!empty($post_parameters)) {  // if form is submitted
+        $favoriteManager = new FavoriteManagerBackend();
+        $stationId = $post_parameters['stationId'];
+        $userId = $post_parameters['userId'];
+        $stationName = $post_parameters['stationName'];
+        $treavelTime = $post_parameters['treavelTime'];
+        $cityName = $post_parameters['cityName'];
+
+        $favoriteManager->addFavourite($_SESSION["id"], $stationId,$userId, $stationName,$treavelTime,$cityName); // for password u use edit password
+    }
+}
+
 function favorites()
 {
     redirectIfNotLoggedin();
-
     require('views/backend/favorite.php');
 }
 function dashboard()
