@@ -1,7 +1,7 @@
 <section id="dashboard">
     <section id="contactTable" href="index.php?action=ContactList">
         <section id="contactList">
-            <h3>MESSAGES</h3>
+            <h3>MESSAGES HEAD</h3>
             <table class="table">
                 <thead>
                     <tr class="desktop_row">

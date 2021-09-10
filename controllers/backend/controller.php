@@ -63,7 +63,7 @@ function contactList()
     redirectIfNotLoggedin(); // call function to redirect to login page in not logged in
     $contactManager = new contactManagerBackend();
     $contacts = $contactManager->getContacts();
-    require('views/backend/contactList.php');
+    require('views/backend/contact.php');
 }
 function settings($post_parameters)
 {

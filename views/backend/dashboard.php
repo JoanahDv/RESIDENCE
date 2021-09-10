@@ -6,7 +6,7 @@
     <nav>
         <ul>
             <li class ="dashboardContact">
-                <a href ="">Contact</a>
+                <a href ="index.php?action=ContactList">Contact</a>
             </li>
         </ul>
     </nav>

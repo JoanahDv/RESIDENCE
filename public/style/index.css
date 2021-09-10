@@ -239,13 +239,9 @@
         padding: 20px;
     }
     
-    #settingsPage {
+    #settingsPage,
+    #settingsPassword {
         margin: 35px;
-    }
-    
-    #settingsPassword,
-    #settingsPage {
-        display: none;
     }
     
     #settingsPage h4 {
@@ -537,12 +533,13 @@
         .nav_menu,
         .nav_menu2,
         .logo {
-            display: flex;
+            /* display: flex; */
             justify-content: space-around;
             padding: 10px;
             list-style-type: none;
             margin: 0px;
             color: white;
+            text-align: centeR;
         }
         .nav_menu li a:hover {
             color: grey;
@@ -631,8 +628,6 @@
             padding-top: 107px;
         }
         .nav_menu2 li {
-            background-color: #1b306b85;
-            padding: 70px;
-            border-radius: 30px;
+            padding: 34px;
         }
     }
