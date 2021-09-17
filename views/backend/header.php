@@ -7,15 +7,15 @@
     <div id="burger_menu">
         <ul>
         <li><a class="nav-link" href="index.php?action=app"><i class="fas fa-home">App</i></a></li>
-            <li><a class="nav-link" href="index.php?action=favorites">Favorites</a></li>
+            <li><a class="nav-link" href="index.php?action=favorite">Favorites</a></li>
             <li><a class="nav-link" href="index.php?action=settings">Settings</a></li>
-            <li><a class="nav-link" href="index.php?action=login">logout</a></li>
+             <li><a class="nav-link" href="index.php?action=login">logout</a></li>
         </ul>
     </div>
     <ul class="nav_menu">
-    <li><a class="nav-link" href="index.php?action=app"><i class="fas fa-home"></i>App</a></li>
-        <li><a class="nav-link" href="index.php?action=favorites">Favorites</a></li>
-        <li><a class="nav-link" href="index.php?action=settings">Settings</a></li>
+    <li><a class="nav-link" href="index.php?action=app"><i class="fas fa-home"></i> App</a></li>
+        <li><a class="nav-link" href="index.php?action=favorite"><i class="fas fa-inbox"></i> Favorites</a></li>
+        <li><a class="nav-link" href="index.php?action=settings"><i class="fas fa-cogs"></i> Settings</a></li>
         <li><a class="nav-link" href="index.php">logout</a></li>
     </ul>
 </header>

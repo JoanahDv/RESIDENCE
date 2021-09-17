@@ -10,7 +10,7 @@
         <form action="/index.php?action=contact" method="POST" id="contactForm">
 
             <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+            <input type="text" id="first_name" name="firstname" placeholder="Your name.." required>
 
             <label for="lname">Last Name</label>
             <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>

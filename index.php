@@ -27,10 +27,12 @@ if (isset($_GET['action'])) {
         settings($_POST);
     }elseif ($_GET['action'] == 'dashboard') {
         dashboard($_POST);
-    }elseif ($_GET['action'] == 'favorites') {
-        favorites($_POST);
+    }elseif ($_GET['action'] == 'favorite') {
+        favorite($_POST);
     }elseif ($_GET['action'] == 'add_favorite') {
         addFavorite($_POST);
+    }elseif ($_GET['action'] == 'deleteFavorite') {
+        deleteFavorite($_POST);
     } elseif ($_GET['action'] == 'contactList') {
         contactList();
     } elseif ($_GET['action'] == 'logout') {

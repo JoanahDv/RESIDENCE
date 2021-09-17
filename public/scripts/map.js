@@ -43,7 +43,8 @@ class MapWrapper {
             // Copy coordinates array.
             const stationId = e.features[0].properties.stationId;
             const stationName = e.features[0].properties.stationName;
-            // const stationName = e.features[0].properties.travelTime;
+            const travelTime = e.features[0].properties.travelTime;
+            const cityName = e.features[0].properties.cityName;
             const coordinates = e.features[0].geometry.coordinates.slice();
             const description = e.features[0].properties.cityName +
                 "<br>" +
@@ -52,7 +53,8 @@ class MapWrapper {
                 "<br><form class='favourite_form' method='POST' action='index.php?action=add_favorite'>" +
                 "<input type='hidden' name='stationId' value=" + stationId + " />" +
                 "<input type='hidden' name='stationName' value=" + stationName + " />" +
-                // "<input type='hidden' name='travelTime' value=" + travelTime + " />" +
+                "<input type='hidden' name='cityName' value=" + cityName + " />" +
+                "<input type='hidden' name='travelTime' value=" + travelTime + " />" +
                 "<input type='submit' value='Favourite' />" +
                 "</form>";
 
@@ -76,7 +78,7 @@ class MapWrapper {
                     form.attr("action"), //attr helps to acces to the form's action
                     form.serialize(), // pass data to controller
                     function(data) {
-                        alert("has been added");
+                        alert(data);
                     }
                 );
             });
