@@ -53,6 +53,11 @@ h2 {
     top: 40%;
 }
 
+#slogan p {
+    font-size: 70px;
+    color: white;
+}
+
 .container_post h2,
 #slogan,
 .chapters_content_head,
@@ -520,7 +525,9 @@ form.form1 {
 }
 
 thead {
-    background-color: teal;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
 }
 
 .desktop_row {
@@ -630,6 +637,7 @@ tr.last_row {
     #homepage {
         display: block;
     }
+    /* #slogan h1 {} */
     /* ---------------------------------------- */
     /*  ==            APP PAGE                  */
     /*---------------------------------------- */
@@ -694,7 +702,25 @@ tr.last_row {
     .desktop_row {
         display: table-row;
     }
+    .desktop_row:hover {
+        background-color: #2c3e50;
+        color: white;
+    }
     .mobile_row {
         display: none;
+        transition: 0.3s;
+    }
+    #contactList,
+    #favoriteList {
+        padding: 50px;
+    }
+    #contactList table {
+        background-color: #d2d6e1;
+        border-radius: 10px;
+    }
+    .contactlisthead {
+        margin-top: 109px;
+        text-align: center;
+        background-color: white;
     }
 }

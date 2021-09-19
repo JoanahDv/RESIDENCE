@@ -14,7 +14,7 @@ function contact($post_parameters)
                 htmlspecialchars($post_parameters['messagebox'])
 
             );
-            echo 'This comment has been flagged';  
+            echo 'Thank you,your message has been sent!';  
             die();      }     
     require('views/frontend/contact.php');
 }

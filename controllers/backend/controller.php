@@ -21,12 +21,15 @@ function app()
     $user = $userManagerBackend->getUser($userid);
     require('views/backend/app.php');
 }
+
 function logout()
 {
     // redirectIfNotLoggedin();
     session_destroy();
     header('views/frontend/login.php'); // redirect to frontend
     exit();
+    require('views/backend/app.php');
+
 }
 
 function addFavorite($post_parameters)

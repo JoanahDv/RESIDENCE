@@ -7,7 +7,7 @@
        
     </figure> -->
     <figcaption id="slogan">
-        <h1>RESIDENCE</h1>
+        <p>RESIDENCE</p>
          <br>
          <a href = "index.php?action=usersignup"><button class="startbutton">Find your city</button></a>
         <!-- <a href="index.php?action=app"><button class="startbutton">Find your city</button></a> -->
