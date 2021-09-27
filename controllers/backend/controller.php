@@ -124,8 +124,7 @@ function settings($post_parameters)
         $userManager = new userManagerBackend();
         $username = $post_parameters['uname'];
         $password = $post_parameters['psw'];
-        $email = $post_parameters['email'];
-        $userManager->editUser($username, $email, $password, $_SESSION["id"]); // for password u use edit password
+         $userManager->editUser($username, $password, $_SESSION["id"]); // for password u use edit password
         $successMessage = "your edit has been saved.";
         $userManager->editPassword($username, $password, $_SESSION["id"]); // for password u use edit password
         $successMessage = "your Password has been saved.";

@@ -10,9 +10,6 @@
             <input class="user " type="text" placeholder="Username" name="uname" />
             <i class="fas fa-user"></i>
 
-            <input class="user " type="text" placeholder="e-mail" name="email" />
-            <i class="fa fa-envelope"></i>
-
             <input class="pass" type="password" placeholder="Password" name="psw" />
             <i class="fas fa-lock"></i>
 

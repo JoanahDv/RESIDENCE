@@ -1,14 +1,6 @@
 <?php
-require('models/connect.php');
 
-function redirectIfNotLoggedin()
-{
-    session_start();
-    if ($_SESSION['loggedin'] != true) { // if logged in is not true
-        header('Location:/index.php?action=userlogin.php'); // redirect
-        exit();
-    }
-}
+require('models/connect.php');
 
 class FavoriteManagerBackend
 {
@@ -39,7 +31,6 @@ class FavoriteManagerBackend
 
     public function deleteFavorite($id)
     {
-        redirectIfNotLoggedin();
         global $db;
         $sql = $db->prepare('DELETE FROM favorites WHERE id = ?');
         $result = $sql->execute(array($id));

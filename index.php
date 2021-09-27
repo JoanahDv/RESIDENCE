@@ -1,4 +1,5 @@
 <?php
+
 require('configuration/config.php');
 require('controllers/frontend/controller.php');
 require('controllers/backend/controller.php');
