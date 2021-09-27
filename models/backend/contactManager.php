@@ -3,8 +3,7 @@
     
      class ContactManagerBackend
     {
-       
-        public function getContact($id)
+         public function getContact($id)
         {
             // use global $conn object in function
             global $db;
@@ -28,5 +27,12 @@
             $req->closeCursor();
             return $contacts;
     
+         }
+         public function deleteContact($id)
+         {
+             global $db;
+             $sql = $db->prepare('DELETE FROM contact WHERE id = ?');
+             $result = $sql->execute(array($id));
+             return $result;
          }
     }

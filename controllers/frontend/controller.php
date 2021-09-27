@@ -11,11 +11,14 @@ function contact($post_parameters)
                 htmlspecialchars($post_parameters['lastname']),
                 htmlspecialchars($post_parameters['email']),
                 htmlspecialchars($post_parameters['subject']),
-                htmlspecialchars($post_parameters['messagebox'])
+                htmlspecialchars($post_parameters['messagebox']),
 
-            );
+    );
+    header('Location:/index.php?action=contact'); // redirect backend
+    exit(); 
             echo 'Thank you,your message has been sent!';  
-            die();      }     
+            die();   
+             }     
     require('views/frontend/contact.php');
 }
 

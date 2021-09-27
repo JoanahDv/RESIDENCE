@@ -1,6 +1,15 @@
 <?php
 require('models/connect.php');
 
+function redirectIfNotLoggedin()
+{
+    session_start();
+    if ($_SESSION['loggedin'] != true) { // if logged in is not true
+        header('Location:/index.php?action=userlogin.php'); // redirect
+        exit();
+    }
+}
+
 class FavoriteManagerBackend
 {
     public function addFavourite($user_id, $station_id, $station_name,$travel_time,$city_name)
@@ -14,33 +23,23 @@ class FavoriteManagerBackend
         return $result;
     }
 
-    public function getFavorite()
+    public function getFavorite($user_id)
     {
         global $db;
         $req = $db->prepare('
           SELECT *  
-          FROM favorites');
-        $req->execute();
+          FROM favorites
+          WHERE user_id = ?');
+        $req->execute(array($user_id));
         $favorite = $req->fetchAll();
         $req->closeCursor();
         return $favorite;
     
     }
-    public function getFavorites()
-        {
-            global $db;
-            $req = $db->prepare('
-          SELECT *
-          FROM contact');
-            $req->execute();
-            $contacts = $req->fetchAll();
-            $req->closeCursor();
-            return $contacts;
-    
-         }
 
     public function deleteFavorite($id)
     {
+        redirectIfNotLoggedin();
         global $db;
         $sql = $db->prepare('DELETE FROM favorites WHERE id = ?');
         $result = $sql->execute(array($id));

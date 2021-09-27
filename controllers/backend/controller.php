@@ -28,7 +28,7 @@ function logout()
     session_destroy();
     header('views/frontend/login.php'); // redirect to frontend
     exit();
-    require('views/backend/app.php');
+    header('Location:/index.php?action=index.php'); // redirect to home page
 
 }
 
@@ -70,6 +70,18 @@ function deleteFavorite($post_parameters)
     }
 }
 
+function deleteContact($post_parameters)
+{
+    redirectIfNotLoggedin();
+    if (!empty($post_parameters)) {  // if form is submitted
+        $contactManager = new ContactManagerBackend();
+        $contactId = $post_parameters['id'];
+        $result = $contactManager->deleteContact($contactId);
+        header('Location:/index.php?action=dashboard'); // redirect to favorites page
+        exit();
+    }
+}
+
 function profileEdit()
 {
     redirectIfNotLoggedin();
@@ -85,7 +97,7 @@ function favorite()
 {
     redirectIfNotLoggedin();
     $favoriteManager = new favoriteManagerBackend();
-    $favorites = $favoriteManager->getFavorite();
+    $favorites = $favoriteManager->getFavorite($_SESSION['id']);
     require('views/backend/favoritePage.php');
 }
 function dashboard()
@@ -94,6 +106,7 @@ function dashboard()
     
     $contactManager = new ContactManagerBackend();
     $contacts = $contactManager->getContacts();
+    $adminPage = true;
     require('views/backend/dashboard.php');
 }
 function contactList()
@@ -114,6 +127,9 @@ function settings($post_parameters)
         $email = $post_parameters['email'];
         $userManager->editUser($username, $email, $password, $_SESSION["id"]); // for password u use edit password
         $successMessage = "your edit has been saved.";
+        $userManager->editPassword($username, $password, $_SESSION["id"]); // for password u use edit password
+        $successMessage = "your Password has been saved.";
+
     }
     $userManager = new userManagerBackend();
     // get user after saving modifications

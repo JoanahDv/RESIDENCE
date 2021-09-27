@@ -33,8 +33,7 @@
 
     </div>
     </div>
-    <hr>
-    <div class="result">
+     <!-- <div class="result">
         <table>
             <tr>
                 <td>Name</td>
@@ -42,7 +41,7 @@
             </tr>
         </table>
 
-    </div>
+    </div> -->
 
 </section>
 <?php $content = ob_get_clean(); ?>

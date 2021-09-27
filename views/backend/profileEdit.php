@@ -9,9 +9,6 @@
             <label for="username"> Name</label><br>
             <input type="text" id="name" name="name" value="<?php echo $user['username']; ?>" required /></br>
 
-            <label for="e-mail">E-mail address</label></br>
-            <input type="text" id="e-mail" name="email" value="<?php echo $user['email']; ?>" required></br>
-
             <button type="submit" name="contact_submit">Save</button>
         </form>
     </div>

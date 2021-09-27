@@ -3,8 +3,8 @@
         <a class="navbar-brand text-white-50 text-uppercase" href="index.php">RESIDENCE</a>
     </div>
 
-    <div id="burger_action">MENU</div>
-    <div id="burger_menu">
+    <div class="burger_action">MENU</div>
+    <div class="burger_menu">
         <ul>
             <li> <a class="nav-link" href="index.php"></a><i class="fas fa-home"></i></li>
             <li><a class="nav-link" href="index.php?action=contact">Contact</a></li>

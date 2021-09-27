@@ -123,7 +123,7 @@ header a,
     position: inherit;
 }
 
-#burger_action {
+.burger_action {
     color: wheat;
     padding-right: 57px;
 }
@@ -135,19 +135,20 @@ header .logo {
 
 /* NAVIGATION */
 
-#burger_menu {
-    display: none;
+.burger_menu {
+    display: block;
     top: 0;
     right: 0;
     list-style-type: none;
 }
 
-
-/* .nav_menu {
-        display: none;
-    } */
+.burger_menu a {
+    color: white;
+}
 
 .nav_menu {
+    list-style-type: none;
+    display: none;
     clear: both;
     transition: .2s ease-out;
 }
@@ -155,10 +156,6 @@ header .logo {
 header ul {
     flex: 2;
     justify-content: space-evenly;
-    list-style-type: none;
-}
-
-.nav_menu {
     list-style-type: none;
 }
 
@@ -184,6 +181,15 @@ header ul {
 .parallax,
 #homepage {
     display: none;
+}
+
+#adminHeader {
+    background-color: #2c3e51;
+}
+
+.burger_action {
+    color: wheat;
+    padding-right: 57px;
 }
 
 
@@ -215,6 +221,10 @@ header ul {
     display: none;
 }
 
+.mapboxgl-map {
+    padding: 40px;
+}
+
 
 /* ---------------------------------------- */
 
@@ -225,7 +235,7 @@ header ul {
 /*---------------------------------------- */
 
 #contact_us {
-    background-image: url("/public/images/contct.jpeg");
+    background-image: url("/public/images/beach.jpeg");
 }
 
 #contact_us input[type=text],
@@ -292,12 +302,14 @@ textarea {
 }
 
 .container_contact {
-    padding: 190px;
+    /* padding: 190px; */
+    padding: 18px;
     background-color: #000000a6;
 }
 
 .container_contact h3 {
-    font-size: 64px;
+    font-size: 36px;
+    margin-top: 170px;
     /* color: rgb(112, 111, 111); */
     /* padding-top: 62px; */
 }
@@ -308,8 +320,6 @@ textarea {
 }
 
 #contact_us form {
-    /* background-color: rgb(33 101 101 / 94%); */
-    padding: 20px;
     border-radius: 3px;
 }
 
@@ -385,7 +395,7 @@ footer a {
 
 .main {
     background-color: #FFFFFF;
-    width: 400px;
+    /* width: 400px; add this to desktop */
     height: 500px;
     margin: 7em auto;
     border-radius: 1.5em;
@@ -489,6 +499,12 @@ form.form1 {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
     color: black;
     text-decoration: none;
+    background-image: url('/public/images/signup.jpeg');
+}
+
+#userlogin {
+    margin-top: 100px;
+    padding: 30px;
 }
 
 #adminlogin {
@@ -566,10 +582,12 @@ tr.last_row {
     background-color: #1b306b6b;
 }
 
+
+/* 
 .mobile_row td {
     background-color: #80808033;
     font-size: 22px;
-}
+} */
 
 .desktop_row {
     display: none;
@@ -584,7 +602,7 @@ tr.last_row {
 
 /*---------------------------------------- */
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
     /* ---------------------------------------- */
     /* ==          HEADER                   */
     /*---------------------------------------- */
@@ -609,10 +627,13 @@ tr.last_row {
         color: white;
         text-align: centeR;
     }
+    .burger_menu {
+        display: none;
+    }
     .nav_menu li a:hover {
         color: grey;
     }
-    #burger_action {
+    .burger_action {
         display: none;
     }
     /* ---------------------------------------- */
@@ -624,7 +645,7 @@ tr.last_row {
     /* PARALLAX HOME PAGE */
     .parallax {
         /* The image used */
-        background-image: url('/public/images/lyon.jpeg');
+        background-image: url('/public/images/provence.jpeg');
         /* Full height */
         height: 100%;
         /* Create the parallax scrolling effect */
@@ -637,7 +658,31 @@ tr.last_row {
     #homepage {
         display: block;
     }
-    /* #slogan h1 {} */
+    #contact_us form {
+        padding: 20px;
+    }
+    #slogan p,
+    .main {
+        margin-left: 50%;
+        transform: translateX(-200%);
+        opacity: 0;
+        animation: slide-in-anim 1.5s ease-out forwards;
+    }
+    @keyframes slide-in-anim {
+        20% {
+            opacity: 0;
+        }
+        60% {
+            transform: translateX(-45%);
+        }
+        75% {
+            transform: translateX(-52%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(-50%);
+        }
+    }
     /* ---------------------------------------- */
     /*  ==            APP PAGE                  */
     /*---------------------------------------- */
@@ -686,6 +731,50 @@ tr.last_row {
         border-radius: 3px;
     }
     /* ---------------------------------------- */
+    /*  ==            LOGIN PAGE                  */
+    /*---------------------------------------- */
+    .main {
+        width: 400px;
+    }
+    #userlogin {
+        margin-top: 0px;
+    }
+    /* ---------------------------------------- */
+    /*  ==            CONTACT                  */
+    /*---------------------------------------- */
+    .container_contact {
+        padding: 190px;
+    }
+    .container_contact h3 {
+        font-size: 42px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .contact_button {
+        margin-top: 15px;
+        height: 34px;
+        width: 400px;
+        border-radius: 22px;
+        background-color: #1b306b;
+        color: white;
+        overflow: hidden;
+        transition: all .2s ease-in-out;
+    }
+    .alt-send-button {
+        width: 400px;
+        height: 34px;
+        transition: all .2s ease-in-out;
+    }
+    .send-text {
+        display: block;
+        margin-top: 10px;
+        font: 700 12px 'Lato', sans-serif;
+        letter-spacing: 2px;
+    }
+    .alt-send-button:hover {
+        transform: translate3d(0px, -29px, 0px);
+    }
+    /*---------------------------------------- */
     /*  ==            BECK END                  */
     /*---------------------------------------- */
     /* dashboard homepage */
@@ -719,7 +808,7 @@ tr.last_row {
         border-radius: 10px;
     }
     .contactlisthead {
-        margin-top: 109px;
+        /* margin-top: 109px; */
         text-align: center;
         background-color: white;
     }

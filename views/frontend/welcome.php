@@ -9,7 +9,8 @@
     <figcaption id="slogan">
         <p>RESIDENCE</p>
          <br>
-         <a href = "index.php?action=usersignup"><button class="startbutton">Find your city</button></a>
+         <hr>
+         <a href = "index.php?action=usersignup"><button class="startbutton">Find your home</button></a>
         <!-- <a href="index.php?action=app"><button class="startbutton">Find your city</button></a> -->
     </figcaption>
 </section>

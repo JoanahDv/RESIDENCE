@@ -17,15 +17,28 @@ class UserManagerBackend
         return $user;
     }
 
-    function editUser($username,$email, $password, $id)
+    function editUser($username,$password, $id)
     {
+        redirectIfNotLoggedin();
         global $db; // defined in models/connect.php
         $query = $db->prepare('
         UPDATE user
-        SET username = ?, $password = ?, $email =?
+        SET username = ?, $password = ?
         WHERE id = ?
       ');
-        $result = $query->execute($username, $email, $password, $id);
+        $result = $query->execute($username, $password, $id);
+        return $result;
+
+    }
+    function editPassword($username,$password, $id)
+    {
+         global $db; // defined in models/connect.php
+        $query = $db->prepare('
+        UPDATE user
+        SET username = ?, $password = ?
+        WHERE id = ?
+      ');
+        $result = $query->execute($username, $password, $id);
         return $result;
     }
     

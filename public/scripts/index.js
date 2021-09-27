@@ -2,9 +2,9 @@ $(document).ready(function() {
     var mapWrapper = new MapWrapper();
     var stations = [];
 
-    $("#burger_action").on("click", function() {
-        $("#burger_menu").toggle();
-        console.log($("#burger_menu"));
+    $(".burger_action").on("click", function() {
+        $(".burger_menu").toggle();
+        console.log($(".burger_menu"));
     });
     $("#contactForm").submit(function(event) {
         event.preventDefault(); // prevent regular form submit
@@ -19,6 +19,11 @@ $(document).ready(function() {
             }
         });
     });
+
+    // $("#loginSubmit").submit(function(event) {
+    //     $("headerbackend").hide();
+    //     $("#adminHeader").show();
+    // });
 
     $("#filters_form").submit(function(event) {
         event.preventDefault(); // prevent regular form submit

@@ -2,9 +2,8 @@
 <?php ob_start(); ?>
 <section id="ProfileHome" action="index.php?action=favorite" method="POST">
     <section id="favoriteTable">
-
+        <h1>YOUR FAVS</h1>
         <section id="favoriteList">
-            <h1>YOUR FAVS</h1>
 
             <table class="table">
                 <thead>
@@ -34,18 +33,15 @@
                         <tr class="mobile_row">
                             <td>Distance</td>
                             <td>
-                                <p><?php echo $favorite['travel_time'] ?></p>
+                                <p><?php echo number_format((float)$favorite['travel_time'], 2) ?>Hours</p>
                             </td>
                         </tr>
-
-
 
                         <tr class="mobile_row last_row">
                             <!-- FORM TO DELETE COMMENT -->
                             <div class="favoriteAction">
                                 <td>Action</td>
                                 <td>
-
                                     <form action="index.php?action=deleteFavorite" method="post">
                                         <input type="hidden" value="<?php echo $favorite['id'] ?>" name="id" />
                                         <input type="submit" value="Delete" />

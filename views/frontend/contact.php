@@ -4,7 +4,9 @@
 <section id="contact_us">
 
     <div class="container_contact">
-        <h3>Contact Us</h3>
+        <h3>Have some questions or a feedback?</h3><br>
+        <h5>Let us know!</h5>
+        
         <p id="success">Thank you! <br>Your Message has been sent.</p>
 
         <form action="/index.php?action=contact" method="POST" id="contactForm">
@@ -26,8 +28,16 @@
 
             <input type="checkbox">
             <label> I have read and agree to the Privacy Policy.</label>
+            <br>
 
-            <button type="submit" name="contact_submit">Send Message</button>
+            <!-- <button type="submit" name="contact_submit">Send Message</button> -->
+
+
+            <button type="submit" class="contact_button" name="contact_submit" value="SEND">
+        <div class="alt-send-button">
+          <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+        </div>
+      </button>
         </form>
     </div>
 </section>

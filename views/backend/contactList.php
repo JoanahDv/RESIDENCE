@@ -13,9 +13,8 @@
                 <th>E-mail</th>
                 <th>Subject</th>
                 <th>Message</th>
+                <th>Date & Time</th>
                 <th>Action</th>
-
-
             </tr>
         </thead>
         <tbody>
@@ -51,21 +50,21 @@
                         <p><?php echo $contact['message'] ?></p>
                     </td>
                 </tr>
+                <tr class="mobile_row last_row">
+                    <td>Date/Time</td>
+                    <td>
+                        <p><?php echo $contact['date'] ?></p>
+                    </td>
+                </tr>
 
                 <tr class="mobile_row last_row">
                     <!-- FORM TO DELETE COMMENT -->
                     <div class="dashboardAction">
                         <td>Action</td>
                         <td>
-
                             <form action="index.php?action=deleteMessage" method="post">
                                 <input type="hidden" value="<?php echo $message['id'] ?>" name="id" />
                                 <input type="submit" value="Delete" />
-                            </form>
-
-                            <form action="index.php?action=replyMessage" method="post">
-                                <input type="hidden" value="<?php echo $message['id'] ?>" name="id" />
-                                <input type='submit' name='Reply' value='Reply'>
                             </form>
                         </td>
                     </div>
@@ -88,6 +87,9 @@
                         <td>
                             <p><?php echo $contact['message'] ?></p>
                         </td>
+                        <td>
+                            <p><?php echo $contact['date'] ?></p>
+                        </td>
 
                     </div>
 
@@ -98,12 +100,6 @@
                                 <input type="hidden" value="<?php echo $message['id'] ?>" name="id" />
                                 <input type="submit" value="Delete" />
                             </form>
-
-                            <form action="index.php?action=replyMessage" method="post">
-                                <input type="hidden" value="<?php echo $message['id'] ?>" name="id" />
-                                <input type='submit' name='Reply' value='Reply'>
-                            </form>
-                        </div>
                     </td>
                 </tr>
 
