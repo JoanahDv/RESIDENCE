@@ -5,6 +5,7 @@
         <h1>YOUR FAVS</h1>
         <section id="favoriteList">
 
+
             <table class="table">
                 <thead>
                     <tr class="desktop_row">
@@ -33,7 +34,7 @@
                         <tr class="mobile_row">
                             <td>Distance</td>
                             <td>
-                                <p><?php echo number_format((float)$favorite['travel_time'], 2) ?>Hours</p>
+                                <p><?php    echo number_format((float)$favorite['travel_time'], 2) ?>Hours</p>
                             </td>
                         </tr>
 

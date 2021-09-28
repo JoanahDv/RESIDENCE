@@ -8,7 +8,6 @@
         <form action="index.php?action=settings" method="POST" id="editForm">
             <label for="username"> Name</label><br>
             <input type="text" id="name" name="name" value="<?php echo $user['username']; ?>" required /></br>
-
             <button type="submit" name="contact_submit">Save</button>
         </form>
     </div>

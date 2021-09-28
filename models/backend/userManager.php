@@ -17,7 +17,7 @@ class UserManagerBackend
         return $user;
     }
 
-    function editUser($username,$password, $id)
+    function editUser($username, $id)
     {
         redirectIfNotLoggedin();
         global $db; // defined in models/connect.php
@@ -26,19 +26,19 @@ class UserManagerBackend
         SET username = ?, $password = ?
         WHERE id = ?
       ');
-        $result = $query->execute($username, $password, $id);
+        $result = $query->execute($username, $id);
         return $result;
 
     }
-    function editPassword($username,$password, $id)
+    function editPassword($password, $id)
     {
          global $db; // defined in models/connect.php
         $query = $db->prepare('
         UPDATE user
-        SET username = ?, $password = ?
+        SET password = $password = ?
         WHERE id = ?
       ');
-        $result = $query->execute($username, $password, $id);
+        $result = $query->execute( $password, $id);
         return $result;
     }
     

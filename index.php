@@ -24,7 +24,7 @@ if (isset($_GET['action'])) {
     }elseif ($_GET['action'] == 'dashboard') {
         dashboard($_POST);
     }elseif ($_GET['action'] == 'favorite') {
-        favorite($_POST);
+        favorite();
     }elseif ($_GET['action'] == 'add_favorite') {
         addFavorite($_POST);
     }elseif ($_GET['action'] == 'deleteFavorite') {

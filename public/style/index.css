@@ -54,7 +54,8 @@ h2 {
 }
 
 #slogan p {
-    font-size: 70px;
+    font-size: 47px;
+    /* font-size: 70px; for desktop */
     color: white;
 }
 
@@ -178,18 +179,44 @@ header ul {
     border-radius: 18px;
 }
 
-.parallax,
+
+/* PARALLAX HOME PAGE */
+
+.parallax {
+    /* The image used */
+    background-image: url('/public/images/provence.jpeg');
+    /* Full height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* .parallax,
 #homepage {
     display: none;
-}
+} */
 
 #adminHeader {
     background-color: #2c3e51;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
 }
 
 .burger_action {
     color: wheat;
     padding-right: 57px;
+}
+
+.burger_menu li,
+.nav_menu,
+.nav_menu2,
+.logo {
+    list-style-type: none;
 }
 
 
@@ -221,8 +248,8 @@ header ul {
     display: none;
 }
 
-.mapboxgl-map {
-    padding: 40px;
+.appPage {
+    background-color: #1b306b45;
 }
 
 
@@ -408,7 +435,10 @@ footer a {
 
 .logintexts {
     text-align: center;
-    padding: 10px;
+    padding: 27px;
+    /* readjust padding  to 10pxfor desktop */
+    margin-top: 34px;
+    /* readjust for desktop margin top zerp */
 }
 
 .sign {
@@ -639,8 +669,12 @@ tr.last_row {
     /* ---------------------------------------- */
     /* ==          HOME PAGE                   */
     /*---------------------------------------- */
-    .startbutton {
+    /* .startbutton {
         width: 12%;
+    } */
+    .startbutton :hover {
+        opacity: 0;
+        transform: scale(0.1, 1);
     }
     /* PARALLAX HOME PAGE */
     .parallax {
@@ -691,8 +725,13 @@ tr.last_row {
         display: flex;
         padding: 30px;
     } */
+    .appPage {
+        position: absolute;
+        z-index: 1;
+        background-color: transparent;
+    }
     .models {
-        margin-top: 43px;
+        margin-top: 8px;
     }
     .checkbox {
         padding: 3px;
@@ -706,17 +745,16 @@ tr.last_row {
         text-align: center;
     }
     #app form {
-        /* width: 32%; */
-        padding: 31px;
-        column-count: 2;
-        background-color: #1b306b36;
+        /* width: 60%; */
+        /* padding: 31px; */
+        background-color: #1b306b;
+        color: white;
     }
     #appSearchPage h3 {
-        font-size: 36px;
         margin-top: 78px;
         text-align: center;
         background-color: #cfd4df;
-        padding: 34px;
+        padding: 21px;
     }
     h4 {
         text-align: center;

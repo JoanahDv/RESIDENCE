@@ -5,8 +5,7 @@
 
     <div class="container_contact">
         <h3>Have some questions or a feedback?</h3><br>
-        <h5>Let us know!</h5>
-        
+         
         <p id="success">Thank you! <br>Your Message has been sent.</p>
 
         <form action="/index.php?action=contact" method="POST" id="contactForm">

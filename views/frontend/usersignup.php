@@ -5,7 +5,7 @@
         <ul class="formHeader">
             <li class="tab"><a>Sign Up</a></li>
         </ul>
-        <h3 class="logintexts">Welcome</h3>
+        <p class="logintexts">Please creat your account</p>
         <form class="form1" action="index.php?action=usersignup" method="POST">
             <input class="user " type="text" placeholder="Username" name="uname" />
             <i class="fas fa-user"></i>
@@ -14,9 +14,8 @@
             <i class="fas fa-lock"></i>
 
             <input class="submit" type="submit" />
-            <br>
-            <p class="logintexts" class="tab active">Click here to <a href="index.php?action=userlogin">Login</a></p>
-
+            <hr>
+            <p class="logintexts" class="tab active">Already a member? Click here to <a href="index.php?action=userlogin">Login</a></p>
         </form>
     </div>
     <section>

@@ -27,12 +27,14 @@
             </div>
             <br>
             <div>
-                <p><i class="far fa-clock"></i> Travelling time</p>
+                <p><i class="far fa-clock"></i> <i class="fas fa-route"></i> Travelling time</p>
 
-                <label for="minTravelTime">minimum</label>
+                <label for="minTravelTime">minimum</label><br>
                 <input type="text" name="minTravelTime" />
 
+                <br>
                 <label for="maxTravelTime"> maximum</label>
+                <br>
                 <input type="text" name="maxTravelTime" />
             </div>
             <br>

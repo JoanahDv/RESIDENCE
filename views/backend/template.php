@@ -43,7 +43,6 @@
         <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch.umd.js"></script>
         <script src="public/scripts/configuration.js"></script>
         <script src="public/scripts/map.js"></script>
-        <script src="public/scripts/index.js"></script>
         <script src="public/scripts/backend.js"></script>
 </body>
 </html>

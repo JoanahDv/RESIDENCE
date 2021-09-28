@@ -5,8 +5,9 @@ class MapWrapper {
         this.map = new mapboxgl.Map({
             container: 'map',
             style: mapStyle,
-            center: [1.7191, 46.7111],
-            zoom: 5
+            center: [-4.944582, 46.105679],
+
+            zoom: 4
         });
         // Add zoom and rotation controls to the map.
         this.map.addControl(new mapboxgl.NavigationControl());

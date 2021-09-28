@@ -7,7 +7,7 @@
         <ul class="formHeader">
             <li class="tab"><a>Log In</a></li>
         </ul>
-        <h3 class="logintexts">Welcome back! </h3>
+        <h3 class="logintexts">Welcome back!</h3>
 
         <form class="form1" action="index.php?action=userlogin" method="POST">
             <input class="un" type="text" placeholder="username" name="uname">
@@ -22,27 +22,17 @@
                 <?php
                 echo $message;
                 ?>
-                <br><br>
+                <br>
             <?php
             }
             ?>
-            <input class="submit" type="submit" />
-            <p class="logintexts" class="forgot"><a href="#">Forgot Password?</p>
-            <p class="logintexts" class="tab active">Click here to <a href="index.php?action=usersignup">Sign Up </a></p>
+            <input class="submit" type="submit"/>
+        <hr>
+            <p class="logintexts" class="tab active">Not a member? Click here to <a href="index.php?action=usersignup">Sign Up </a></p>
         </form>
 
     </div>
     </div>
-     <!-- <div class="result">
-        <table>
-            <tr>
-                <td>Name</td>
-                <td></td>
-            </tr>
-        </table>
-
-    </div> -->
-
 </section>
 <?php $content = ob_get_clean(); ?>
 <?php require 'views/frontend/template.php'; ?>

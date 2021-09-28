@@ -24,11 +24,9 @@ function app()
 
 function logout()
 {
-    // redirectIfNotLoggedin();
     session_destroy();
-    header('views/frontend/login.php'); // redirect to frontend
+    header('Location:/index.php?action=index.php');
     exit();
-    header('Location:/index.php?action=index.php'); // redirect to home page
 
 }
 
