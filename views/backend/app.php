@@ -2,23 +2,14 @@
 <?php ob_start(); ?>
 
 <section id="appSearchPage">
-    <h3>
+    <p class="welcomePage">
         Welcome
-        <?php echo $user['username']; ?>
-
-    </h3>
-
-    <h4>
+        <?php echo $user['username']; ?><br>
         <i> Find your destination below</i>
-    </h4>
+    </p>
+    <div class="app appPage" >
 
-
-
-    <!-- <figure id="logohead"> <img src="public/images/logohouse.png" alt="Website Logo" />
-</figure> -->
-    <div id="app" class="appPage" action="/index.php?action=app">
-
-        <form id="filters_form" class="map_side" action="/index.php?action=filter_stations">
+      <form id="filters_form" class="map_side" action="/index.php?action=filter_stations">
             <div>
                 <p><i class="fas fa-map-marker-alt"></i> Location</p>
                 <select name="city" id="city">
@@ -30,12 +21,12 @@
                 <p><i class="far fa-clock"></i> <i class="fas fa-route"></i> Travelling time</p>
 
                 <label for="minTravelTime">minimum</label><br>
-                <input type="text" name="minTravelTime" />
+                <input type="text" id= "minTravelTime" name="minTravelTime" />
 
                 <br>
                 <label for="maxTravelTime"> maximum</label>
                 <br>
-                <input type="text" name="maxTravelTime" />
+                <input type="text" id="maxTravelTime" name="maxTravelTime" />
             </div>
             <br>
             <div class="models">
@@ -74,9 +65,6 @@
         <p class="informations-stations">Traveling time: <span id="travelling_time" class="tatus"></span></p>
 
     </div>
-
-    </div>
-
 </section>
 
 <?php $content = ob_get_clean(); ?>

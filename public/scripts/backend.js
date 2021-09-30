@@ -3,20 +3,20 @@ $(document).ready(function() {
         $(".burger_menu").toggle();
     });
 
-    $("#contactForm").submit(function(event) {
-        event.preventDefault(); // prevent regular form submit
-        // submit form using AJAX
-        var form = $(this);
-        $.post({
-            url: form.attr('action'),
-            data: form.serialize(), // serializes the form's elements.
-            success: function(data) {
-                $("#success").show();
-                $("#contactForm").hide();
-            }
-        });
-    });
-
+    // $("#contactForm").submit(function(event) {
+    //     event.preventDefault(); // prevent regular form submit
+    //     // submit form using AJAX
+    //     var form = $(this);
+    //     $.post({
+    //         url: form.attr('action'),
+    //         data: form.serialize(), // serializes the form's elements.
+    //         success: function(data) {
+    //             $("#success").show();
+    //             $("#contactForm").hide();
+    //         }
+    //     });
+    // });
+    var stations = [];
     var mapWrapper = new MapWrapper();
     $("#filters_form").submit(function(event) {
         event.preventDefault(); // prevent regular form submit
@@ -52,8 +52,8 @@ $(document).ready(function() {
         index.browseObjects({
             query: '', // all stations (no text search)
             filters: `fromCityInseeCode=75056`, // from Paris
-            batch: function(batch) {
-                stations = stations.concat(batch)
+            batch: function(batch) { // go through stations
+                stations = stations.concat(batch); // add batch to station list
             }
         }).then(function() {
             mapWrapper.onload(stations);

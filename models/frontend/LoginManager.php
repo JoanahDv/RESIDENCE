@@ -26,17 +26,17 @@ class LoginManagerFrontend
         return $result;
     }
 
-    public function createUser($username, $email, $password)
+    public function createUser($username, $password)
     {
         global $db;
         // we could preemptively select user with the same username to
         // inform the user that is trying to sign up that a user with the same
         // username already exists
         $req = $db->prepare('
-            INSERT INTO user (username, email, password) VALUES (?,?,?)
+            INSERT INTO user (username, password) VALUES (?,?)
         ');
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        $result = $req->execute(array($username,$email, $password_hash));  // insert record
+        $result = $req->execute(array($username, $password_hash));  // insert record
         if (!$result) {
             return false;
         }

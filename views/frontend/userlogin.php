@@ -26,12 +26,11 @@
             <?php
             }
             ?>
-            <input class="submit" type="submit"/>
-        <hr>
-            <p class="logintexts" class="tab active">Not a member? Click here to <a href="index.php?action=usersignup">Sign Up </a></p>
+            <input class="submit" type="submit" />
+            <hr>
+            <p class="logintexts tab active">Not a member? Click here to <a href="index.php?action=usersignup">Sign Up </a></p>
         </form>
 
-    </div>
     </div>
 </section>
 <?php $content = ob_get_clean(); ?>

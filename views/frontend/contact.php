@@ -10,7 +10,7 @@
 
         <form action="/index.php?action=contact" method="POST" id="contactForm">
 
-            <label for="fname">First Name</label>
+            <label for="first_name">First Name</label>
             <input type="text" id="first_name" name="firstname" placeholder="Your name.." required>
 
             <label for="lname">Last Name</label>
@@ -29,14 +29,8 @@
             <label> I have read and agree to the Privacy Policy.</label>
             <br>
 
-            <!-- <button type="submit" name="contact_submit">Send Message</button> -->
-
-
-            <button type="submit" class="contact_button" name="contact_submit" value="SEND">
-        <div class="alt-send-button">
-          <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
-        </div>
-      </button>
+            <button type="submit" name="contact_submit"> Send Message</button>
+            
         </form>
     </div>
 </section>

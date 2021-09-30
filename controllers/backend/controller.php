@@ -4,11 +4,12 @@ require('models/backend/userManager.php');
 require('models/backend/contactManager.php');
 require('models/backend/favoriteManager.php');
 
+// ENSURE THE SECUTIRY OF THE WEBSITE 
 function redirectIfNotLoggedin()
 {
     session_start();
     if ($_SESSION['loggedin'] != true) { // if logged in is not true
-        header('Location:/index.php?action=userlogin.php'); // redirect
+        header('Location:/index.php?action=userlogin'); // redirect
         exit();
     }
 }
@@ -24,12 +25,15 @@ function app()
 
 function logout()
 {
-    session_destroy();
-    header('Location:/index.php?action=index.php');
+    // clean up session
+    session_start();
+    unset($_SESSION['loggedin']);
+    unset($_SESSION['id']);
+    header('Location:/index.php');
     exit();
 
 }
-
+// ADDING  TO FAVORITES 
 function addFavorite($post_parameters)
 {
     redirectIfNotLoggedin();
@@ -55,7 +59,7 @@ function addFavorite($post_parameters)
         exit;
     }
 }
-
+// DELETING FAVORITES FROM THE LIST AND DB
 function deleteFavorite($post_parameters)
 {
     redirectIfNotLoggedin();
@@ -67,7 +71,7 @@ function deleteFavorite($post_parameters)
         exit();
     }
 }
-
+// DELETING CONTACT FROM THE LIST AND FROM DB
 function deleteContact($post_parameters)
 {
     redirectIfNotLoggedin();
@@ -89,7 +93,7 @@ function profileEdit()
 function passwordEdit()
 {
     redirectIfNotLoggedin();
-    require('views/backend/profileEdit.php');
+    require('views/backend/passwordEditPage.php');
 }
 function favorite()
 {

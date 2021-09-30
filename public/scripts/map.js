@@ -17,7 +17,6 @@ class MapWrapper {
             this.map.scrollZoom.disable();
         }
     }
-
     onload(stations) {
         // add filter data  to source
         var geojson = this.stationsToGeoJson(stations);
@@ -38,6 +37,8 @@ class MapWrapper {
         });
 
         var thismap = this.map; // lose reference to "this" in callback functions
+
+        // PROPERTIES TO BE SHOWN ON THE MAP WHEN MAP  IS SAVED TO FAVORITES 
 
         this.map.on('click', this.station_layer_id, function(e) {
             // from https://docs.mapbox.com/mapbox-gl-js/example/popup-on-click/

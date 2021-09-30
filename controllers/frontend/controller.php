@@ -1,7 +1,8 @@
 <?php
-
 require('models/frontend/LoginManager.php');
 require('models/frontend/contactManager.php'); 
+
+//  FILLING INFORMATION AND SENDING TO DB AND REDIRECTING TO STAY ON THESAME PAGE
 function contact($post_parameters)
     {
         if (!empty($post_parameters)) {  // if form is submitted
@@ -25,11 +26,12 @@ function contact($post_parameters)
 function welcome()
 {   
     // $chapterManager = new ChapterManagerFrontend();
-     require('views/frontend/welcome.php');
+    $title = "Welcome page";
+    require('views/frontend/welcome.php');
    
 }
 
-
+// LOG IN FOR USER - AND GETTING USER NAME AND PASSWORD FROM THE DB
 function userLogin($post_parameters)
 {
     if (!empty($post_parameters)) {   // if form is submitted
@@ -74,15 +76,15 @@ function adminlogin($post_parameters)
     }
     require('views/frontend/adminlogin.php');
 }
+
 function userSignUp($post_parameters){
     if (!empty($post_parameters)) {   // if form is submitted
         $LoginManager = new LoginManagerFrontend();
 
         $username = $post_parameters['uname'];
-        $email= $post_parameters['email'];
         $password = $post_parameters['psw'];
 
-        $user = $LoginManager->createUser($username, $email,$password);
+        $user = $LoginManager->createUser($username, $password);
         if ($user) {
             header('Location:/index.php?action=userlogin'); // redirect to login
             exit();
