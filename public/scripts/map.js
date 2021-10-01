@@ -134,6 +134,12 @@ class MapWrapper {
 
 
 function time_convert(num) {
-    var hours = parseInt(num);
-    return hours + "h de Paris";
+    var hours = parseInt(num); // extract number of hours
+    var minutes = parseInt(60 / (1 / (num - hours))); // compute number of minutes
+    if (hours == 0) {
+        return minutes + "min from Paris";
+    } else if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    return hours + "h" + minutes + " from Paris";
 }

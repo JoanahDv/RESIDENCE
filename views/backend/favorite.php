@@ -10,7 +10,7 @@
                 <tr class="desktop_row">
                     <th> Station Name</th>
                     <th>City Name</th>
-                    <th>Distance</th>
+                    <th>Travel time</th>
                     <th>Action</th>
 
                 </tr>
@@ -30,9 +30,9 @@
                         </td>
                     </tr>
                     <tr class="mobile_row">
-                        <td>Distance</td>
+                        <td>Travel time</td>
                         <td>
-                            <?php echo number_format((float)$favorite['travel_time'], 2) ?>Hours
+                        <?php echo floor($favorite['travel_time'])." hr ".(int)(60/(1/($favorite['travel_time']-floor($favorite['travel_time']))))." min"; ?>
                         </td>
                     </tr>
 
@@ -56,9 +56,8 @@
                             <?php echo $favorite['city_name'] ?>
                         </td>
                         <td>
-                            <?php echo $favorite['travel_time'] ?>
+                            <?php echo floor($favorite['travel_time'])." hr ".(int)(60/(1/($favorite['travel_time']-floor($favorite['travel_time']))))." min"; ?>
                         </td>
-
                         <td>
                             <!-- FORM TO DELETE  -->
                             <form action="index.php?action=deleteFavorite" method="post">
