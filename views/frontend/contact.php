@@ -1,10 +1,10 @@
 <?php $title = "Contact"; ?>
 <?php ob_start(); ?>
 
-<section id="contact_us">
+<div id="contact_us">
 
     <div class="container_contact">
-        <h3>Have some questions or a feedback?</h3><br>
+        <h1>Have some questions or a feedback?</h1><br>
          
         <p id="success">Thank you! <br>Your Message has been sent.</p>
 
@@ -33,7 +33,7 @@
             
         </form>
     </div>
-</section>
+</div>
 <?php $content = ob_get_clean(); ?>
 <?php require 'views/frontend/template.php'; ?>
  

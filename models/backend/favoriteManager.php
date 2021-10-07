@@ -20,13 +20,26 @@ class FavoriteManagerBackend
         global $db;
         $req = $db->prepare('
           SELECT *  
-          FROM favorites
+          FROM favorites ORDER BY travel_time;
           WHERE user_id = ?');
         $req->execute(array($user_id));
         $favorite = $req->fetchAll();
         $req->closeCursor();
         return $favorite;
     
+    }
+    public function getFavoritePagination()
+    {
+        global $db;
+        // count all favs
+        $req = $db->query('
+            SELECT COUNT(*)
+            FROM favorite
+            WHERE user_id = ?
+        ');
+        $numberOfFavorites = $req->fetch()[0]; // fetch result
+        $numberOfPages = ceil ($numberOfFavorites/6);
+        return $numberOfPages;
     }
 
     public function deleteFavorite($id)

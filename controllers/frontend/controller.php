@@ -13,7 +13,6 @@ function contact($post_parameters)
                 htmlspecialchars($post_parameters['email']),
                 htmlspecialchars($post_parameters['subject']),
                 htmlspecialchars($post_parameters['messagebox']),
-
     );
     header('Location:/index.php?action=contact'); // redirect backend
     exit(); 

@@ -38,3 +38,8 @@ if (isset($_GET['action'])) {
 } else { // no action is set
     welcome(); // default to welcome page
 }
+if (isset($_GET['pageno'])) {
+    $pageno = $_GET['pageno'];
+} else {
+    $pageno = 1;
+}

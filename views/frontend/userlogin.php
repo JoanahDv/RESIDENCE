@@ -5,9 +5,11 @@
 
     <div class="main">
         <ul class="formHeader">
-            <li class="tab"><a>Log In</a></li>
+            <li class="tab">
+                <h1><a>Log In</a></h1>
+            </li>
         </ul>
-        <h3 class="logintexts">Welcome back!</h3>
+        <p class="logintexts">Welcome back!</p>
 
         <form class="form1" action="index.php?action=userlogin" method="POST">
             <input class="un" type="text" placeholder="username" name="uname">

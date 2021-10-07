@@ -59,6 +59,13 @@ function addFavorite($post_parameters)
         exit;
     }
 }
+function addFavorites($page)
+{
+    $favoriteManager = new FavoriteManagerBackend();
+    $favorites= $favoriteManager->getFavorite($page); // get fav
+    $numberOfPages = $favoriteManager->getFavoritePagination(); // get page numbers
+    require('views/backend/favorite.php');
+}
 // DELETING FAVORITES FROM THE LIST AND DB
 function deleteFavorite($post_parameters)
 {
@@ -94,6 +101,7 @@ function passwordEdit()
 {
     redirectIfNotLoggedin();
     require('views/backend/passwordEditPage.php');
+    
 }
 function favorite()
 {
@@ -101,6 +109,7 @@ function favorite()
     $favoriteManager = new favoriteManagerBackend();
     $favorites = $favoriteManager->getFavorite($_SESSION['id']);
     require('views/backend/favoritePage.php');
+    
 }
 function dashboard()
 {

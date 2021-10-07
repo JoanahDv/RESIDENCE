@@ -15,7 +15,6 @@
             $req->closeCursor();
             return $contact;
         }
-
         public function getContacts()
         {
             global $db;

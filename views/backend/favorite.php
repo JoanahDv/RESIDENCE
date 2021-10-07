@@ -18,19 +18,19 @@
             <tbody>
                 <?php foreach ($favorites as $favorite) { ?>
                     <tr class="mobile_row">
-                        <td>Station Name</td>
+                        <th>Station Name</th>
                         <td>
                             <?php echo $favorite['station_name'] ?>
                         </td>
                     </tr>
                     <tr class="mobile_row">
-                        <td>City Name</td>
+                        <th>City Name</th>
                         <td>
                             <?php echo $favorite['city_name'] ?>
                         </td>
                     </tr>
                     <tr class="mobile_row">
-                        <td>Travel time</td>
+                        <th>Travel time</th>
                         <td>
                         <?php echo floor($favorite['travel_time'])." hr ".(int)(60/(1/($favorite['travel_time']-floor($favorite['travel_time']))))." min"; ?>
                         </td>
@@ -38,7 +38,7 @@
 
                     <tr class="mobile_row last_row">
                         <!-- FORM TO DELETE  -->
-                        <td>Action</td>
+                        <th>Action</th>
                         <td>
                             <form action="index.php?action=deleteFavorite" method="post">
                                 <input type="hidden" value="<?php echo $favorite['id'] ?>" name="id" />
@@ -69,6 +69,18 @@
                 <?php } ?>
             </tbody>
         </table>
+        <div class="pagination">
+        <?php for ($pageNumber = 1; $pageNumber <= $numberOfPages; $pageNumber = $pageNumber + 1) { ?>
+            <ul>
+                <li class="page-item">
+                    <a class="page-link" href="index.php?action=favorite=<?php echo $pageNumber ?>">
+                        <?php echo $pageNumber ?>
+                    </a>
+                </li>
+            </ul>
+        <?php } ?>
+
+    </div>
     </div>
 </section>
 

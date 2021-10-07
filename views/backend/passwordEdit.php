@@ -1,7 +1,7 @@
 <section id="settingsPassword">
     <div class="container_edit">
         <p id="successful">Thank you! <br>Your password has been changed.</p>
-        <h4>Edit Your Passoword</h4>
+        <h1>Edit Your Passoword</h1>
         <form action="index.php?action=settings" method="POST" id="editPasswordForm">
             <label for="passwordNew"> password</label><br>
             <input type="password" id="passwordNew" name="currentPassword"><span id="Password" class="required"></span>
