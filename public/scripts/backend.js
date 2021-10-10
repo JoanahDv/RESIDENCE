@@ -46,9 +46,7 @@ $(document).ready(function() {
         const client = algoliasearch(algoliaApplicationID, algoliaApiKey);
         const index = client.initIndex('stations');
 
-        //$.get("/index.php?action=filter_stations", function(stations) { // 
-        //  mapWrapper.onload(stations);
-        //});
+
         index.browseObjects({
             query: '', // all stations (no text search)
             filters: `fromCityInseeCode=75056`, // from Paris

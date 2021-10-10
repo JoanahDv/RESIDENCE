@@ -1,8 +1,7 @@
 <?php $title = "favorite"; ?>
 <?php ob_start(); ?>
 <section id="ProfileHome">
-    <!-- action="index.php?action=favorite" method="POST" -->
-
+ 
     <h1>YOUR FAVS</h1>
     <div class="favoriteList">
         <table class="table">
@@ -12,7 +11,6 @@
                     <th>City Name</th>
                     <th>Travel time</th>
                     <th>Action</th>
-
                 </tr>
             </thead>
             <tbody>

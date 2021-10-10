@@ -24,10 +24,13 @@ function contact($post_parameters)
 
 function welcome()
 {   
-    // $chapterManager = new ChapterManagerFrontend();
-    $title = "Welcome page";
+     $title = "Welcome page";
     require('views/frontend/welcome.php');
    
+}
+function aboutUs ()
+{
+     require('views/frontend/aboutUs.php');
 }
 
 // LOG IN FOR USER - AND GETTING USER NAME AND PASSWORD FROM THE DB
@@ -52,8 +55,6 @@ function userLogin($post_parameters)
     }
     require('views/frontend/userlogin.php');
 }
-
-
 
 function adminlogin($post_parameters)
 {
