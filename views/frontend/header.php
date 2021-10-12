@@ -12,7 +12,6 @@
             <li><a class="nav-link" href="index.php?action=contact">Contact</a></li>
             <li><a class="nav-link" href="index.php?action=aboutUs">About</a></li>
             <li><a class="nav-link" href="index.php?action=userlogin">User</a></li>
-
         </ul>
     </div>
     <ul class="nav_menu">

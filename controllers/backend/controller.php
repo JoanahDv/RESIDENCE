@@ -31,7 +31,6 @@ function logout()
     unset($_SESSION['id']);
     header('Location:/index.php');
     exit();
-
 }
 // ADDING  TO FAVORITES 
 function addFavorite($post_parameters)
@@ -59,6 +58,15 @@ function addFavorite($post_parameters)
         exit;
     }
 }
+function favorites($page)
+{
+    redirectIfNotLoggedin();
+    $favoriteManager = new FavoriteManagerBackend();
+    $favorites = $favoriteManager->getFavorites($page, $_SESSION["id"]); // get fav
+    $numberOfPages = $favoriteManager->getFavoritePagination($_SESSION['id']); // get page numbers
+
+    require('views/backend/favorite.php');
+}
 
 // DELETING FAVORITES FROM THE LIST AND DB
 function deleteFavorite($post_parameters)
@@ -68,7 +76,7 @@ function deleteFavorite($post_parameters)
         $favoriteManager = new FavoriteManagerBackend();
         $favoriteId = $post_parameters['id'];
         $result = $favoriteManager->deleteFavorite($favoriteId);
-        header('Location:/index.php?action=favorite'); // redirect to favorites page
+        header('Location:/index.php?action=favorite&page'); // redirect to favorites page
         exit();
     }
 }
@@ -95,27 +103,12 @@ function passwordEdit()
 {
     redirectIfNotLoggedin();
     require('views/backend/passwordEditPage.php');
-    
 }
-function favorite()
-{
-    redirectIfNotLoggedin();
-    $favoriteManager = new favoriteManagerBackend();
-    $favorites = $favoriteManager->getFavorite($_SESSION['id']);
-    require('views/backend/favoritePage.php');
-    
-}
-function Favorites($page)
-{
-    $favoriteManager = new FavoriteManagerBackend();
-    $favorites= $favoriteManager->getFavorite($page); // get fav
-    $numberOfPages = $favoriteManager->getFavoritePagination(); // get page numbers
-    require('views/backend/favorite.php');
-}
-function dashboard()
+
+function dashboard($id)
 {
     redirectIfNotLoggedin(); // call function to redirect to login page in not logged in
-    
+
     $contactManager = new ContactManagerBackend();
     $contacts = $contactManager->getContacts();
     $adminPage = true;
@@ -136,11 +129,10 @@ function settings($post_parameters)
         $userManager = new userManagerBackend();
         $username = $post_parameters['uname'];
         $password = $post_parameters['psw'];
-         $userManager->editUser($username, $password, $_SESSION["id"]); // for password u use edit password
+        $userManager->editUser($username, $password, $_SESSION["id"]); // for password u use edit password
         $successMessage = "your edit has been saved.";
         $userManager->editPassword($username, $password, $_SESSION["id"]); // for password u use edit password
         $successMessage = "your Password has been saved.";
-
     }
     $userManager = new userManagerBackend();
     // get user after saving modifications

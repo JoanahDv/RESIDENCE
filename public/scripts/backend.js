@@ -3,21 +3,12 @@ $(document).ready(function() {
         $(".burger_menu").toggle();
     });
 
-    // $("#contactForm").submit(function(event) {
-    //     event.preventDefault(); // prevent regular form submit
-    //     // submit form using AJAX
-    //     var form = $(this);
-    //     $.post({
-    //         url: form.attr('action'),
-    //         data: form.serialize(), // serializes the form's elements.
-    //         success: function(data) {
-    //             $("#success").show();
-    //             $("#contactForm").hide();
-    //         }
-    //     });
-    // });
+
     var stations = [];
     var mapWrapper = new MapWrapper();
+    if (mapWrapper.map === null) { // no map on page
+        return;
+    }
     $("#filters_form").submit(function(event) {
         event.preventDefault(); // prevent regular form submit
         var form = $(this);

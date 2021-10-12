@@ -8,10 +8,9 @@
           global $db; // defined in models/connect.php
           $query = $db->prepare('
             INSERT INTO contact(first_name, last_name, email, subject, message)
-            VALUES(?,?,?,?,?,)
+            VALUES(?,?,?,?,?)
           ');
           $result = $query->execute(array($first_name, $last_name, $email, $subject, $message));
        }
   }
-
 ?>

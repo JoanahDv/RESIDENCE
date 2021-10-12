@@ -3,30 +3,33 @@
     
      class ContactManagerBackend
     {
-         public function getContact($id)
+         public function getContact()
         {
             // use global $conn object in function
             global $db;
             $req = $db->prepare('
             SELECT *
-            FROM contact');
+            FROM contact
+            WHERE id =?');
             $req->execute();
             $contact =$req ->fetchAll();
             $req->closeCursor();
             return $contact;
         }
-        public function getContacts()
-        {
-            global $db;
-            $req = $db->prepare('
-          SELECT *
-          FROM contact');
-            $req->execute();
-            $contacts = $req->fetchAll();
-            $req->closeCursor();
-            return $contacts;
     
+         public function getContacts()
+         {
+              global $db;
+             $req = $db->prepare('
+                 SELECT *
+                 FROM contact
+             ');
+             $result = $req->execute();
+             $contacts = $req->fetchall();
+             $req->closeCursor();
+             return $contacts;
          }
+         
          public function deleteContact($id)
          {
              global $db;

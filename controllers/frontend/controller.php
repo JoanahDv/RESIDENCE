@@ -1,36 +1,33 @@
 <?php
 require('models/frontend/LoginManager.php');
-require('models/frontend/contactManager.php'); 
+require('models/frontend/contactManager.php');
 
 //  FILLING INFORMATION AND SENDING TO DB AND REDIRECTING TO STAY ON THESAME PAGE
+
 function contact($post_parameters)
-    {
-        if (!empty($post_parameters)) {  // if form is submitted
-            $contactManager = new contactUs();
-            $contactManager->sendMessage(
-                htmlspecialchars($post_parameters['firstname']),
-                htmlspecialchars($post_parameters['lastname']),
-                htmlspecialchars($post_parameters['email']),
-                htmlspecialchars($post_parameters['subject']),
-                htmlspecialchars($post_parameters['messagebox']),
-    );
-    header('Location:/index.php?action=contact'); // redirect backend
-    exit(); 
-            echo 'Thank you,your message has been sent!';  
-            die();   
-             }     
+{
+    if (!empty($post_parameters)) {  // if form is submitted
+        $contactManager = new contactUs();
+        $contactManager->sendMessage(
+            htmlspecialchars($post_parameters['firstname']),
+            htmlspecialchars($post_parameters['lastname']),
+            htmlspecialchars($post_parameters['email']),
+            htmlspecialchars($post_parameters['subject']),
+            htmlspecialchars($post_parameters['messagebox']),
+        );
+        exit();
+    }
     require('views/frontend/contact.php');
 }
 
 function welcome()
-{   
-     $title = "Welcome page";
-    require('views/frontend/welcome.php');
-   
-}
-function aboutUs ()
 {
-     require('views/frontend/aboutUs.php');
+    $title = "Welcome page";
+    require('views/frontend/welcome.php');
+}
+function aboutUs()
+{
+    require('views/frontend/aboutUs.php');
 }
 
 // LOG IN FOR USER - AND GETTING USER NAME AND PASSWORD FROM THE DB
@@ -77,7 +74,8 @@ function adminlogin($post_parameters)
     require('views/frontend/adminlogin.php');
 }
 
-function userSignUp($post_parameters){
+function userSignUp($post_parameters)
+{
     if (!empty($post_parameters)) {   // if form is submitted
         $LoginManager = new LoginManagerFrontend();
 
@@ -94,5 +92,3 @@ function userSignUp($post_parameters){
     }
     require('views/frontend/usersignup.php');
 }
-
-

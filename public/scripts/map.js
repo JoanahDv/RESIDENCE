@@ -2,13 +2,17 @@ class MapWrapper {
     station_layer_id = 'stations';
     constructor() {
         mapboxgl.accessToken = mapAccessToken
-        this.map = new mapboxgl.Map({
-            container: 'map',
-            style: mapStyle,
-            center: [-4.944582, 46.105679],
-
-            zoom: 4
-        });
+        try {
+            this.map = new mapboxgl.Map({
+                container: 'map',
+                style: mapStyle,
+                center: [-4.944582, 46.105679],
+                zoom: 4
+            });
+        } catch (Exception) {
+            this.map = null;
+            return;
+        }
         // Add zoom and rotation controls to the map.
         this.map.addControl(new mapboxgl.NavigationControl());
 
@@ -130,8 +134,6 @@ class MapWrapper {
         return geojson;
     }
 }
-
-
 
 function time_convert(num) {
     var hours = parseInt(num); // extract number of hours

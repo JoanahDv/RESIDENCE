@@ -15,28 +15,48 @@ class FavoriteManagerBackend
         return $result;
     }
 
+    
     public function getFavorite($user_id)
     {
         global $db;
         $req = $db->prepare('
           SELECT *  
-          FROM favorites ORDER BY travel_time;
-          WHERE user_id = ?');
+          FROM favorites 
+          WHERE user_id = ?
+          ORDER BY travel_time');
         $req->execute(array($user_id));
         $favorite = $req->fetchAll();
         $req->closeCursor();
         return $favorite;
     
     }
-    public function getFavoritePagination()
+    public function getFavorites($pageNumber, $user_id)
+    {
+        $favoritesPerPage = 6;
+        $offset = $favoritesPerPage * $pageNumber - $favoritesPerPage; // 
+        global $db;
+        $req = $db->prepare('
+            SELECT *
+            FROM favorites 
+            WHERE user_id = ?
+            ORDER BY travel_time 
+            LIMIT ' . $offset . ', ' . $favoritesPerPage);
+        $req->execute(array($user_id));
+        $result = $req->fetchall();
+        $req->closeCursor();
+        return $result;
+    }
+
+    public function getFavoritePagination($user_id)
     {
         global $db;
         // count all favs
-        $req = $db->query('
+        $req = $db->prepare('
             SELECT COUNT(*)
-            FROM favorite
+            FROM favorites
             WHERE user_id = ?
         ');
+        $req->execute(array($user_id));
         $numberOfFavorites = $req->fetch()[0]; // fetch result
         $numberOfPages = ceil ($numberOfFavorites/6);
         return $numberOfPages;
